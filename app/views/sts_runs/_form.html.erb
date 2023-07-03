@@ -1,0 +1,27 @@
+<%= form_with(model: sts_run) do |form| %>
+  <% if sts_run.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sts_run.errors.count, "error") %> prohibited this sts_run from being saved:</h2>
+
+      <ul>
+        <% sts_run.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :character, style: "display: block" %>
+    <%= form.text_field :character %>
+  </div>
+
+  <div>
+    <%= form.label :floor, style: "display: block" %>
+    <%= form.number_field :floor %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

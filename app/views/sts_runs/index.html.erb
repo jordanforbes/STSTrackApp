@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Sts runs</h1>
+
+<div id="sts_runs">
+  <% @sts_runs.each do |sts_run| %>
+    <%= render sts_run %>
+    <p>
+      <%= link_to "Show this sts run", sts_run %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New sts run", new_sts_run_path %>

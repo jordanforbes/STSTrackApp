@@ -1,0 +1,2 @@
+class StsRun < ApplicationRecord
+end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sts_run %>
+
+<div>
+  <%= link_to "Edit this sts run", edit_sts_run_path(@sts_run) %> |
+  <%= link_to "Back to sts runs", sts_runs_path %>
+
+  <%= button_to "Destroy this sts run", @sts_run, method: :delete %>
+</div>
