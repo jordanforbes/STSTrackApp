@@ -10,7 +10,22 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.9', '>= 4.9.2'
+
+# A testing framework that allows you to write behavior-driven tests (BDD) for your Rails application.
+gem 'rspec', '~> 3.4'
+
+# A library for creating test data, allowing you to easily generate and customize objects for your tests.
+gem 'factory_bot', '~> 4.8', '>= 4.8.2'
+
+# # A gem that helps you detect N+1 queries and other performance issues in your Rails application.
+# gem 'bullet', '~> 6.1'
+
+# RuboCop is a Ruby code style checking and code formatting tool. It aims to enforce the community-driven Ruby Style Guide.
+gem 'rubocop', '~> 1.54'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -38,6 +53,8 @@ gem "jbuilder"
 
 # Pg is the Ruby interface to the PostgreSQL RDBMS. It works with PostgreSQL 9.3 and later.
 gem "pg"
+
+gem 'pg_array', '~> 0.1.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
