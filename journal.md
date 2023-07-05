@@ -9,3 +9,5 @@
 \*Formatted the Index File, it now displays runs in descending order from most recent to oldest.
 
 \*\*This is the basic functionality I was looking for.
+
+- Began adding react, initialized new app called ststracker

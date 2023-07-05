@@ -12,6 +12,9 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
 
+# Use Webpack to manage app-like JavaScript modules in Rails
+gem 'webpacker'
+
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.9', '>= 4.9.2'
 
