@@ -1,7 +1,16 @@
+
 require 'json'
 require_relative '../config/environment'
+# cycles through json files in folder, parses them, and uploads them to the db
+
+# command to use:
+# rails runner lib/all_runs_importer.rb
+
+# TODO: prevent duplicates from being uploaded
 
 folder_path = Rails.root.join('db/runs')
+
+puts "all runs importer"
 
 json_files = Dir.glob(File.join(folder_path, '*.json'))
 
@@ -12,30 +21,19 @@ json_files.each do |file_path|
   max_hp_per_floor = record["max_hp_per_floor"] || []  # Ensure max_hp_per_floor is an array
   max_hp = max_hp_per_floor.last || 0  # Get the last element or use 0 if the array is empty
 
-  if record["character_chosen"] == "DEFECT"
-    character = "Defect"
-  elsif record["character_chosen"] == "IRONCLAD"
-    character = "Ironclad"
-  elsif record["character_chosen"] == "SILENT"
-    character = "Silent"
-  else
-    character = "Watcher"
-  end
-
-  # if record["score_breakdown"].include?("Heartbreaker: 250")
-  #   heart_kill = true
-  # else
-  heart_kill = false
-  # end
+  # checks the final fight which the character had before the run ended
   final_fight = record["damage_taken"].last || 0
+  # if the last fight was the heart, and the character won the run, then obviously they killed the heart
+  heart_kill = false
 
   if final_fight["enemies"] == "The Heart" && record["victory"] == true
     heart_kill = true
   end
 
-  puts heart_kill
+  # puts heart_kill
+
   mapped_records = {
-    character: character,
+    character: record["character_chosen"],
     floor: record["floor_reached"],
     victory: record["victory"],
     killed_by: record["victory"] ? nil : record["killed_by"],

@@ -42,6 +42,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

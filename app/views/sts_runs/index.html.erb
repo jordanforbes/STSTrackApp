@@ -1,14 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Sts runs</h1>
+<h1>Slay the Spire Run Log</h1>
 
 <div id="sts_runs">
   <% @sts_runs.each do |sts_run| %>
-    <%= render sts_run %>
+    <%# <%= render sts_run %>
+    <p>
+      <strong>Character: </strong>
+      <%= sts_run.character%>
+    </p>
+
+    <p>
+      <strong>Ascension:</strong>
+      <%= sts_run.ascension %>
+    </p>
+
+    <% if sts_run.victory %>
+      <p>
+        <strong>Victory
+      <% if sts_run.heart_kill %>
+          Against the Heart
+      <% end %>
+        </strong>
+      </p>
+    <% end %>
+
+
+    <% if !sts_run.victory %>
+      <p>
+        <strong>Killed By:</strong>
+        <%= sts_run.killed_by %>
+      </p>
+    <% end %>
     <p>
       <%= link_to "Show this sts run", sts_run %>
     </p>
+    <br/>
   <% end %>
+
 </div>
 
 <%= link_to "New sts run", new_sts_run_path %>

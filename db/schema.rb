@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_04_204849) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_05_152327) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_204849) do
     t.text "relics", default: "[]"
     t.string "seed"
     t.boolean "heart_kill", default: false
-    t.check_constraint "\"character\"::text = ANY (ARRAY['Ironclad'::character varying, 'Defect'::character varying, 'Silent'::character varying, 'Watcher'::character varying]::text[])", name: "character_check"
     t.check_constraint "ascension >= 0 AND ascension <= 20", name: "check_ascension_range"
   end
 

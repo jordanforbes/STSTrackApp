@@ -8,6 +8,7 @@ class StsRunsController < ApplicationController
 
   # GET /sts_runs/1 or /sts_runs/1.json
   def show
+    @sts_run = StsRun.find(params[:id])
   end
 
   # GET /sts_runs/new
@@ -17,6 +18,7 @@ class StsRunsController < ApplicationController
 
   # GET /sts_runs/1/edit
   def edit
+    @sts_run = StsRun.find(params[:id])
   end
 
   # POST /sts_runs or /sts_runs.json
