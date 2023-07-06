@@ -16,6 +16,19 @@ div {
   }
 }
 
+.titleSpace {
+  margin-top: 10px;
+}
+
+.titleFont {
+  font-family: "Aladin", sans-serif;
+}
+
+@font-face {
+  font-family: "Aladin";
+  src: url("./fonts/Aladin-Regular.ttf") format("truetype");
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

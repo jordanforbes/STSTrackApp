@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <div className="row">
+        <div className="row titleFont titleSpace">
           <h1>Spire Track Star</h1>
         </div>
         <br />
