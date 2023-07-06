@@ -1,0 +1,15 @@
+.runcard {
+  /* border: 1px solid black; */
+  margin-top: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.victory {
+  background-color: rgb(127, 255, 180);
+}
+
+.failure {
+  background-color: rgb(82, 1, 25);
+  color: white;
+}
