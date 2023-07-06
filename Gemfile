@@ -15,6 +15,11 @@ gem "sprockets-rails"
 # Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker'
 
+# gem 'rack-cors', :require => 'rack/cors'
+
+gem 'rack-cors', :require => 'rack/cors'
+
+
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.9', '>= 4.9.2'
 

@@ -36,9 +36,11 @@ function App() {
       <div className="container">
         <h1>Relay the Spire</h1>
         <div>
-          {runData.map((run) => (
-            <RunCard data={run} />
-          ))}
+          {runData
+            .sort((a, b) => b.local_time - a.local_time)
+            .map((run) => (
+              <RunCard data={run} />
+            ))}
         </div>
       </div>
     </div>
