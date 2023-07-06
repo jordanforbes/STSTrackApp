@@ -33,7 +33,14 @@ const RunDetails = (props) => {
 
   Object.keys(deckMap).forEach((card) => {
     const count = deckMap[card];
-    deckArr.push(`${card} x${count}`);
+    let thisCard = card;
+    card[card.length - 2] === "_"
+      ? (thisCard = card.slice(0, card.length - 2))
+      : card[card.length - 4] === "_"
+      ? (thisCard = card.slice(0, card.length - 4) + "+1")
+      : (thisCard = card);
+
+    deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
   });
 
   console.log(deckArr);
@@ -41,20 +48,33 @@ const RunDetails = (props) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-md-3"></div>
-          <div className="col-md-4">{props.thisRun.character}</div>
+          <div className="col-md-2">{props.thisRun.character}</div>
+          <div className="col-md-1">A{props.thisRun.ascension}</div>
+          <div className="col-md-4">
+            {!props.thisRun.victory
+              ? "Died on Floor " +
+                props.thisRun.floor +
+                " to " +
+                props.thisRun.killed_by
+              : props.thisRun.heart_kill
+              ? "Defeated the Heart!"
+              : "Victory!"}
+          </div>
           <div className="col-md-2">
-            <Button variant="primary" className="btn" onClick={clearBtn}>
-              X
+            <Button
+              variant="outline-secondary"
+              className="btn"
+              onClick={clearBtn}
+            >
+              Back
             </Button>
           </div>
-          <div className="col-md-3"></div>
         </div>
         <div className="row cardCount">Cards in Deck: {masterDeck.length}</div>
-        <div className="row ">
-          <div className="col-md-3 scrollDivLight">
+        <div className="row deckRow">
+          <div className="col-md-12 scrollDivLight">
             {deckArr.map((card) => (
-              <p>{card}</p>
+              <div className="deckCard ">{card}</div>
             ))}
           </div>
         </div>
