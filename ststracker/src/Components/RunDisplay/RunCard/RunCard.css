@@ -1,5 +1,6 @@
 .runcard {
   /* border: 1px solid black; */
+  border-radius: 5px;
   margin-top: 5px;
 
   padding-top: 10px;
@@ -7,13 +8,36 @@
   text-align: left;
 }
 .victory {
-  background-color: rgb(207, 0, 0);
-  color: white;
+  border: 4px solid gold;
+  color: gold;
+  font-weight: bold;
+}
+.charLabel {
+  /* border-right: 4px solid white; */
+  text-align: center;
+  font-size: large;
+}
+.dateLabel {
+  text-align: center;
+  font-size: smaller;
 }
 
 .failure {
-  background-color: rgb(13, 1, 82);
   color: white;
+}
+
+.ironclad {
+  /* background-color: rgb(159, 24, 24); */
+  background: linear-gradient(90deg, #9f1818, #d80101);
+}
+.silent {
+  background: linear-gradient(90deg, #01522f, #04844d);
+}
+.defect {
+  background: linear-gradient(90deg, #3a36aa, #3f39ff);
+}
+.watcher {
+  background: linear-gradient(90deg, #680068, #b303b3);
 }
 .detailsBtn {
   font-weight: bold;

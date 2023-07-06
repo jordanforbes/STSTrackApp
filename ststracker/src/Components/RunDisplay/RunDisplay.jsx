@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
+
+import "./RunDisplay.css";
 
 import RunCard from "./RunCard/RunCard";
 import RunDetails from "./RunDetails/RunDetails";
@@ -10,14 +11,18 @@ const RunDisplay = (props) => {
 
   return (
     <div className="container">
-      <div className="row">
-        {thisRun ? (
-          <RunDetails thisRun={thisRun} setThisRun={setThisRun} />
-        ) : (
-          props.runData
-            .sort((a, b) => b.local_time - a.local_time)
-            .map((run) => <RunCard data={run} setThisRun={setThisRun} />)
-        )}
+      <div className={`row ${thisRun ? "" : "detailsbg"}`}>
+        <div className="col-md-2"></div>
+        <div className="col-md-9 scrollDiv">
+          {thisRun ? (
+            <RunDetails thisRun={thisRun} setThisRun={setThisRun} />
+          ) : (
+            props.runData
+              .sort((a, b) => b.local_time - a.local_time)
+              .map((run) => <RunCard data={run} setThisRun={setThisRun} />)
+          )}
+        </div>
+        <div className="col-md-1"></div>
       </div>
     </div>
   );

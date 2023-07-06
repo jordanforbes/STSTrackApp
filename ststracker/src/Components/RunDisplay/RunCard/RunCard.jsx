@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import "./RunCard.css";
 import { Button } from "react-bootstrap";
+
+import "./RunCard.css";
+
 const RunCard = (props) => {
   const [date, setDate] = useState("");
 
@@ -18,17 +20,23 @@ const RunCard = (props) => {
   const handleClick = () => {
     props.setThisRun(props.data);
   };
+  console.log(props.data.character.toLowerCase());
   return (
     <>
       <div className="row">
-        <div className="col-md-2"></div>
+        {/* <div className="col-md-2"></div> */}
+        <div className="col-md-1"></div>
         <div
-          className={`col-md-10 runcard ${
+          className={`col-md-10 runcard ${props.data.character.toLowerCase()} ${
             props.data.victory ? "victory" : "failure"
           }`}
         >
           <div className="row">
-            <div className="col-md-2">{props.data.character} : </div>
+            <div className="col-md-3 ">
+              <p className="charLabel">{props.data.character}</p>
+              <p className="dateLabel">{date}</p>
+            </div>
+            <div className="col-md-1"> A{props.data.ascension}</div>
             <div className="col-md-4">
               {props.data.victory
                 ? props.data.heart_kill
@@ -39,13 +47,12 @@ const RunCard = (props) => {
                   " to " +
                   props.data.killed_by}
             </div>
-            <div className="col-md-2">{date}</div>
             <div className="col-md-2">
               <Button
                 onClick={handleClick}
                 className={`detailsBtn ${
                   props.data.victory ? "vicBtn" : "failBtn"
-                }`}
+                } `}
                 variant="light"
               >
                 Details

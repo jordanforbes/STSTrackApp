@@ -27,8 +27,13 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Relay the Spire</h1>
-        <RunDisplay runData={runData} />
+        <div className="row">
+          <h1>Relay the Spire</h1>
+        </div>
+        <br />
+        <div className="row">
+          <RunDisplay runData={runData} />
+        </div>
       </div>
     </div>
   );
