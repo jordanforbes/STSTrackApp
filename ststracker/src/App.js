@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-import RunCard from "./Components/RunCard/RunCard";
+import RunDisplay from "./Components/RunDisplay/RunDisplay";
 function App() {
   const [runData, setRunData] = useState([]);
 
@@ -24,24 +24,11 @@ function App() {
       });
   };
 
-  // console.log("RUN DATA !!!!!!#$$$$#$##%@");
-  // console.log(runData);
-
-  // const RunCard = (props) => {
-  //   return <div>{props.data.character}</div>;
-  // };
-
   return (
     <div className="App">
       <div className="container">
         <h1>Relay the Spire</h1>
-        <div>
-          {runData
-            .sort((a, b) => b.local_time - a.local_time)
-            .map((run) => (
-              <RunCard data={run} />
-            ))}
-        </div>
+        <RunDisplay runData={runData} />
       </div>
     </div>
   );

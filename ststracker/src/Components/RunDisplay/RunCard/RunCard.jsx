@@ -14,6 +14,10 @@ const RunCard = (props) => {
         rawDate.slice(0, 4)
     );
   }, []);
+
+  const handleClick = () => {
+    props.setThisRun(props.data);
+  };
   return (
     <>
       <div className="row">
@@ -25,7 +29,7 @@ const RunCard = (props) => {
         >
           <div className="row">
             <div className="col-md-2">{props.data.character} : </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               {props.data.victory
                 ? props.data.heart_kill
                   ? "VICTORY AGAINST THE HEART!"
@@ -37,7 +41,15 @@ const RunCard = (props) => {
             </div>
             <div className="col-md-2">{date}</div>
             <div className="col-md-2">
-              <Button variant="light">Details</Button>
+              <Button
+                onClick={handleClick}
+                className={`detailsBtn ${
+                  props.data.victory ? "vicBtn" : "failBtn"
+                }`}
+                variant="light"
+              >
+                Details
+              </Button>
             </div>
           </div>
         </div>

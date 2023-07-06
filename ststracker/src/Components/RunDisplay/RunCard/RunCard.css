@@ -1,0 +1,47 @@
+.runcard {
+  /* border: 1px solid black; */
+  margin-top: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+.victory {
+  background-color: rgb(207, 0, 0);
+  color: white;
+}
+
+.failure {
+  background-color: rgb(13, 1, 82);
+  color: white;
+}
+.detailsBtn {
+  font-weight: bold;
+  border: none;
+}
+.vicBtn {
+  color: rgb(207, 0, 0);
+}
+.vicBtn:hover {
+  color: rgb(207, 0, 0);
+  background-color: rgb(250, 206, 206);
+}
+.vicBtn:active {
+  color: rgb(207, 0, 0) !important;
+  background-color: rgb(209, 171, 171) !important;
+}
+
+.failBtn {
+  color: rgb(13, 1, 82);
+}
+
+.failBtn:hover {
+  color: rgb(13, 1, 82);
+  /* color: White; */
+  background-color: rgb(189, 189, 241);
+}
+.failBtn:active {
+  color: rgb(13, 1, 82) !important;
+  /* color: White; */
+  background-color: rgb(146, 146, 191) !important;
+}
