@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="row">
-          <h1>Relay the Spire</h1>
+          <h1>Spire Track Star</h1>
         </div>
         <br />
         <div className="row">

@@ -13,7 +13,7 @@ const RunDisplay = (props) => {
     <div className="container">
       <div className={`row ${thisRun ? "" : "detailsbg"}`}>
         <div className="col-md-2"></div>
-        <div className="col-md-9 scrollDiv">
+        <div className={`col-md-9 ${thisRun ? "" : "scrollDiv"}`}>
           {thisRun ? (
             <RunDetails thisRun={thisRun} setThisRun={setThisRun} />
           ) : (

@@ -6,3 +6,8 @@
   height: 600px;
   overflow: auto;
 }
+
+.cardCount {
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}

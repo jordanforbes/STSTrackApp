@@ -6,6 +6,15 @@ import "./RunCard.css";
 const RunCard = (props) => {
   const [date, setDate] = useState("");
 
+  const arrayConverter = (arr) => {
+    return arr
+      .substr(1, arr.length - 2)
+      .split(", ")
+      .map((card) => card);
+  };
+
+  const masterDeck = arrayConverter(props.data.master_deck);
+
   useEffect(() => {
     var rawDate = String(props.data.local_time);
     setDate(
@@ -47,6 +56,7 @@ const RunCard = (props) => {
                   " to " +
                   props.data.killed_by}
             </div>
+            <div className="col-md-2">Deck Size: {masterDeck.length}</div>
             <div className="col-md-2">
               <Button
                 onClick={handleClick}
