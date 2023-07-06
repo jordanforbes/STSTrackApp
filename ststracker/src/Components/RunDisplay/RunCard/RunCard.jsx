@@ -51,7 +51,7 @@ const RunCard = (props) => {
                 ? props.data.heart_kill
                   ? "VICTORY AGAINST THE HEART!"
                   : "VICTORY!"
-                : "Died at floor " +
+                : "Died on floor " +
                   props.data.floor +
                   " to " +
                   props.data.killed_by}
