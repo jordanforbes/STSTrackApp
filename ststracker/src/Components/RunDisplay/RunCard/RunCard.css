@@ -4,22 +4,27 @@
   margin-top: 5px;
 
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: ;
   text-align: left;
 }
+.victorySparkle {
+  height: 5rem;
+}
 .victory {
-  border: 4px solid gold;
-  color: gold;
+  /* border: 4px solid gold; */
+  color: #ffd700;
   font-weight: bold;
 }
 .charLabel {
   /* border-right: 4px solid white; */
   text-align: center;
-  font-size: large;
+  font-size: 1rem;
+  font-weight: bold;
 }
 .dateLabel {
+  margin-top: -1rem;
   text-align: center;
-  font-size: smaller;
+  font-size: 0.75rem;
 }
 
 .failure {
@@ -29,6 +34,10 @@
 .ironclad {
   /* background-color: rgb(159, 24, 24); */
   background: linear-gradient(90deg, #9f1818, #d80101);
+}
+.ironcladVictory {
+  /* background-color: rgb(159, 24, 24); */
+  background: linear-gradient(90deg, #9f1818, #ff7979);
 }
 .silent {
   background: linear-gradient(90deg, #01522f, #04844d);

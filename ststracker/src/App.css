@@ -18,14 +18,18 @@ div {
 
 .titleSpace {
   margin-top: 10px;
+  /* font-size: 10px !important; */
+  text-align: left;
 }
 
 .titleFont {
   font-family: "Aladin", sans-serif;
+  /* font-size: larger; */
 }
 
 @font-face {
   font-family: "Aladin";
+  /* font-size: 10px; */
   src: url("./fonts/Aladin-Regular.ttf") format("truetype");
 }
 

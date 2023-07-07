@@ -15,6 +15,7 @@ const RunDetails = (props) => {
       .map((card) => card);
   };
   const masterDeck = arrayConverter(props.thisRun.master_deck);
+  const relics = arrayConverter(props.thisRun.relics);
 
   // masterDeck.forEach((item) => {
   //   deckMap[item] = (deckMap[item] || 0) + 1;
@@ -40,9 +41,13 @@ const RunDetails = (props) => {
       ? (thisCard = card.slice(0, card.length - 4) + "+1")
       : (thisCard = card);
 
+    // thisCard[thisCard.length - 1] === "1"
+    //   ? (thisCard = thisCard.slice(0, thisCard.length - 1))
+    //   : "";
+
     deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
   });
-
+  console.log(props.thisRun);
   console.log(deckArr);
   return (
     <>
@@ -50,7 +55,9 @@ const RunDetails = (props) => {
         <div className="row">
           <div className="col-md-2">{props.thisRun.character}</div>
           <div className="col-md-1">A{props.thisRun.ascension}</div>
-          <div className="col-md-4">
+          <div className="col-md-1"></div>
+
+          <div className="col-md-6">
             {!props.thisRun.victory
               ? "Died on Floor " +
                 props.thisRun.floor +
@@ -69,8 +76,23 @@ const RunDetails = (props) => {
               Back
             </Button>
           </div>
+          <div className="row"></div>
         </div>
-        <div className="row cardCount">Cards in Deck: {masterDeck.length}</div>
+        <div className="row cardCount">
+          <div className="col-md-2">{props.date}</div>
+
+          <div className="col-md-5"></div>
+          <div className="col-md-4">Seed: {props.thisRun.seed}</div>
+        </div>
+        <div className="row">Relics:</div>
+        <div className="row">
+          {relics.map((relic) => (
+            <div className="deckRelic">{relic}</div>
+          ))}
+        </div>
+        <div className="row">
+          <div className="col-md-3">Cards in Deck: {masterDeck.length}</div>
+        </div>
         <div className="row deckRow">
           <div className="col-md-12 scrollDivLight">
             {deckArr.map((card) => (
