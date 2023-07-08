@@ -8,7 +8,7 @@ import RunDetails from "./RunDetails/RunDetails";
 const RunDisplay = (props) => {
   const [thisRun, setThisRun] = useState(false);
   const [date, setDate] = useState(false);
-  console.log(thisRun);
+  // console.log(thisRun);
 
   return (
     <div className="container">
@@ -16,7 +16,12 @@ const RunDisplay = (props) => {
         <div className="col-md-2"></div>
         <div className={`col-md-9 ${thisRun ? "" : "scrollDiv"}`}>
           {thisRun ? (
-            <RunDetails date={date} thisRun={thisRun} setThisRun={setThisRun} />
+            <RunDetails
+              date={date}
+              thisRun={thisRun}
+              setThisRun={setThisRun}
+              cardData={props.cardData}
+            />
           ) : (
             props.runData
               .sort((a, b) => b.local_time - a.local_time)

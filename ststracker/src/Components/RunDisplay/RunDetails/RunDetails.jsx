@@ -4,9 +4,14 @@ import "./RunDetails.css";
 
 const RunDetails = (props) => {
   const [deckObj, setDeckObj] = useState({});
+  // const [thisDeck, setThisDeck] = useState([]);
+  const cardObjs = [];
+  const thisDeck = [];
   const clearBtn = () => {
     props.setThisRun(false);
   };
+
+  const reducedDeck = {};
 
   const arrayConverter = (arr) => {
     return arr
@@ -35,11 +40,6 @@ const RunDetails = (props) => {
   Object.keys(deckMap).forEach((card) => {
     const count = deckMap[card];
     let thisCard = card;
-    card[card.length - 2] === "_"
-      ? (thisCard = card.slice(0, card.length - 2))
-      : card[card.length - 4] === "_"
-      ? (thisCard = card.slice(0, card.length - 4) + "+1")
-      : (thisCard = card);
 
     // thisCard[thisCard.length - 1] === "1"
     //   ? (thisCard = thisCard.slice(0, thisCard.length - 1))
@@ -47,8 +47,51 @@ const RunDetails = (props) => {
 
     deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
   });
-  console.log(props.thisRun);
-  console.log(deckArr);
+  // console.log(props.thisRun);
+  // console.log(deckArr);
+  // console.log(props.cardData.map((card) => card.id));
+
+  // const convDeck = []
+  // console.log(masterDeck);
+  masterDeck.map((dCard) => {
+    let obj = props.cardData.find((cardObj) => cardObj.id === dCard);
+    cardObjs.push(obj);
+  });
+  // console.log(thisDeck);
+
+  // const matchedCard = props.cardData.find((cardObj) => cardObj.id === "Bash");
+  // console.log(matchedCard);
+  cardObjs.map((card) => {
+    if (card && "name" in card) {
+      thisDeck.push(card.name);
+    }
+  });
+
+  console.log(thisDeck);
+
+  // for (let card = 0; card < thisDeck.length; card++) {
+  //   console.log(thisDeck[card].name);
+  // }
+
+  thisDeck.forEach((card) => {
+    reducedDeck[card] = (reducedDeck[card] || 0) + 1;
+  });
+
+  // const obj = {
+  //   key1: "value1",
+  //   key2: "value2",
+  //   key3: "value3",
+  // };
+  // const mappedArray = Object.entries(obj).map(
+  //   ([key, value]) => `${key}: ${value}`
+  // );
+
+  const readyArr = Object.entries(reducedDeck).map(
+    ([card, count]) => `${count}x ${card}`
+  );
+
+  console.log(readyArr);
+  console.log(Object.values(reducedDeck));
   return (
     <>
       <div className="container">
@@ -91,11 +134,11 @@ const RunDetails = (props) => {
           ))}
         </div>
         <div className="row">
-          <div className="col-md-3">Cards in Deck: {masterDeck.length}</div>
+          <div className="col-md-3">Cards in Deck: {thisDeck.length}</div>
         </div>
         <div className="row deckRow">
           <div className="col-md-12 scrollDivLight">
-            {deckArr.map((card) => (
+            {readyArr.map((card) => (
               <div className="deckCard ">{card}</div>
             ))}
           </div>
