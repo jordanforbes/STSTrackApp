@@ -71,8 +71,8 @@ const RunCard = (props) => {
                     " to " +
                     props.data.killed_by}
               </div>
-              {/* <div className="col-md-2">Deck Size: {masterDeck.length}</div> */}
-              <div className="col-md-2"></div>
+              <div className="col-md-2">Deck Size: {masterDeck.length}</div>
+              {/* <div className="col-md-2"></div> */}
               <div className="col-md-2">
                 <Button
                   onClick={handleClick}

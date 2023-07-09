@@ -20,19 +20,16 @@ const RunDetails = (props) => {
       .map((card) => card);
   };
   const masterDeck = arrayConverter(props.thisRun.master_deck);
+  console.log(props.thisRun.master_deck);
+  console.log(props.thisRun.master_deck.length);
+
+  console.log(masterDeck);
+  console.log(masterDeck.length);
   const relics = arrayConverter(props.thisRun.relics);
 
-  // masterDeck.forEach((item) => {
-  //   deckMap[item] = (deckMap[item] || 0) + 1;
-  // });
   const deckMap = {};
   const deckArr = [];
 
-  // Object.keys(deckMap).forEach((item) => {
-  //   const count = deckMap[item];
-  //   console.log(`${item} x${count})`);
-  // });
-  // console.log(deckMap);
   masterDeck.forEach((card) => {
     deckMap[card] = (deckMap[card] || 0) + 1;
   });
@@ -41,50 +38,46 @@ const RunDetails = (props) => {
     const count = deckMap[card];
     let thisCard = card;
 
-    // thisCard[thisCard.length - 1] === "1"
-    //   ? (thisCard = thisCard.slice(0, thisCard.length - 1))
-    //   : "";
-
     deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
   });
-  // console.log(props.thisRun);
-  // console.log(deckArr);
-  // console.log(props.cardData.map((card) => card.id));
 
-  // const convDeck = []
-  // console.log(masterDeck);
+  console.log("masterDeck map");
   masterDeck.map((dCard) => {
-    let obj = props.cardData.find((cardObj) => cardObj.id === dCard);
-    cardObjs.push(obj);
+    let thisCard = "";
+    let upGrade = "";
+    console.log(dCard);
+    console.log(dCard[dCard.length - 2]);
+    if (dCard[dCard.length - 2] === "+") {
+      console.log(dCard.length - 2, dCard.length - 1);
+      upGrade = dCard.slice(dCard.length - 2, dCard.length);
+      // console.log(dCard.slice(dCard.slice(0, dCard.length - 2)));
+      console.log(upGrade);
+      thisCard = dCard.slice(0, dCard.length - 2);
+    } else {
+      console.log("HIT ELSE");
+      thisCard = dCard;
+    }
+    console.log("THISCARDTEST");
+    console.log(thisCard);
+    let obj = props.cardData.find((cardObj) => cardObj.id === thisCard);
+    // cardObjs.push(obj);
+    console.log("obj");
+    console.log(obj);
+    thisDeck.push(obj.name + upGrade);
   });
-  // console.log(thisDeck);
 
-  // const matchedCard = props.cardData.find((cardObj) => cardObj.id === "Bash");
-  // console.log(matchedCard);
   cardObjs.map((card) => {
     if (card && "name" in card) {
       thisDeck.push(card.name);
     }
   });
 
+  console.log("thisDeck");
   console.log(thisDeck);
-
-  // for (let card = 0; card < thisDeck.length; card++) {
-  //   console.log(thisDeck[card].name);
-  // }
 
   thisDeck.forEach((card) => {
     reducedDeck[card] = (reducedDeck[card] || 0) + 1;
   });
-
-  // const obj = {
-  //   key1: "value1",
-  //   key2: "value2",
-  //   key3: "value3",
-  // };
-  // const mappedArray = Object.entries(obj).map(
-  //   ([key, value]) => `${key}: ${value}`
-  // );
 
   const readyArr = Object.entries(reducedDeck).map(
     ([card, count]) => `${count}x ${card}`
