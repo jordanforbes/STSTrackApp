@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import CardBox from "./CardBox/CardBox";
 // import "./RunDetails.css";
 
 const RunDetails = (props) => {
-  const [deckObj, setDeckObj] = useState({});
-
-  const cardObjs = [];
   const thisDeck = [];
+  let count = 0;
+
   const clearBtn = () => {
     props.setThisRun(false);
   };
-
-  const reducedDeck = {};
 
   const arrayConverter = (arr) => {
     return arr
@@ -25,10 +23,16 @@ const RunDetails = (props) => {
   const deckMap = {};
   const deckArr = [];
 
+  // adds to deckMap obj which is structured as such: { card_id1: num, card_id2: num}
   masterDeck.forEach((card) => {
+    count++;
     deckMap[card] = (deckMap[card] || 0) + 1;
   });
 
+  console.log("deckmap");
+  console.log(deckMap);
+
+  // creates deckArr which has the format of [nX cardName(+1)], ex: [Bash+, 4x Strike_R]
   Object.keys(deckMap).forEach((card) => {
     const count = deckMap[card];
     let thisCard = card;
@@ -36,43 +40,50 @@ const RunDetails = (props) => {
     deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
   });
 
-  masterDeck.map((dCard) => {
+  console.log("deckArr");
+  console.log(deckArr);
+
+  const findCard = (card) => {
     let thisCard = "";
     let upgrade = "";
-    if (dCard[dCard.length - 2] === "+") {
+
+    const cardData = {
+      id: "",
+      name: "",
+      upgrade: 0,
+      cost: "",
+      type: "",
+      color: "",
+      description: "",
+      rarity: "",
+      count: 0,
+    };
+    if (card[card.length - 2] === "+") {
       // if there's only one upgrade, then only the plus is necessary, but more than one means the number should be there
       // basically only necessary for searing blow on basegame cards, but will become needed for mods
-      if (dCard[dCard.length - 1] === "1") {
+      if (card[card.length - 1] === "1") {
         upgrade = "+";
       } else {
-        upgrade = dCard.slice(dCard.length - 2, dCard.length);
+        upgrade = card.slice(card.length - 2, card.length);
       }
 
-      thisCard = dCard.slice(0, dCard.length - 2);
+      thisCard = card.slice(0, card.length - 2);
     } else {
-      thisCard = dCard;
+      thisCard = card;
     }
 
     let obj = props.cardData.find((cardObj) => cardObj.id === thisCard);
-    thisDeck.push(obj.name + upgrade);
+    // pushes to deck, remove this
+    // thisDeck.push(obj.name + upgrade);
+  };
+
+  masterDeck.map((dCard) => {
+    findCard(dCard);
   });
 
-  cardObjs.map((card) => {
-    if (card && "name" in card) {
-      thisDeck.push(card.name);
-    }
-  });
-
-  console.log("thisDeck");
-  console.log(thisDeck);
-
-  thisDeck.forEach((card) => {
-    reducedDeck[card] = (reducedDeck[card] || 0) + 1;
-  });
-
-  const readyArr = Object.entries(reducedDeck).map(
-    ([card, count]) => `${count}x ${card}`
-  );
+  const RelicBox = (props) => {
+    return <div className="deckRelic">{props.relic}</div>;
+  };
 
   return (
     <>
@@ -112,16 +123,16 @@ const RunDetails = (props) => {
         <div className="row">Relics:</div>
         <div className="row">
           {relics.map((relic) => (
-            <div className="deckRelic">{relic}</div>
+            <RelicBox relic={relic} />
           ))}
         </div>
         <div className="row">
-          <div className="col-md-3">Cards in Deck: {thisDeck.length}</div>
+          <div className="col-md-3">Cards in Deck: {count}</div>
         </div>
         <div className="row deckRow">
           <div className="col-md-12 scrollDivLight">
-            {readyArr.map((card) => (
-              <div className="deckCard ">{card}</div>
+            {Object.entries(deckMap).map(([card]) => (
+              <CardBox cardName={card} count={deckMap[card]} />
             ))}
           </div>
         </div>
