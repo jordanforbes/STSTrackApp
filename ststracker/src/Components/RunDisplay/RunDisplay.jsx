@@ -8,6 +8,22 @@ import RunDetails from "./RunDetails/RunDetails";
 const RunDisplay = (props) => {
   const [thisRun, setThisRun] = useState(false);
   const [date, setDate] = useState(false);
+  const [masterDeck, setMasterDeck] = useState(false);
+  const [relics, setRelics] = useState(false);
+
+  const arrayConverter = (arr) => {
+    return (
+      arr
+        // .substr(1, arr.length - 2)
+        .split(", ")
+        .map((card) => card)
+    );
+  };
+
+  if (thisRun !== false) {
+    setMasterDeck(arrayConverter(thisRun.master_deck));
+    setRelics(arrayConverter(thisRun.relics));
+  }
   // console.log(thisRun);
 
   return (
@@ -21,6 +37,10 @@ const RunDisplay = (props) => {
               thisRun={thisRun}
               setThisRun={setThisRun}
               cardData={props.cardData}
+              masterDeck={masterDeck}
+              setMasterDeck={setMasterDeck}
+              relics={relics}
+              setRelics={setRelics}
             />
           ) : (
             props.runData
@@ -29,8 +49,12 @@ const RunDisplay = (props) => {
                 <RunCard
                   date={date}
                   setDate={setDate}
-                  data={run}
+                  runData={run}
                   setThisRun={setThisRun}
+                  masterDeck={masterDeck}
+                  setMasterDeck={setMasterDeck}
+                  relics={relics}
+                  setRelics={setRelics}
                 />
               ))
           )}

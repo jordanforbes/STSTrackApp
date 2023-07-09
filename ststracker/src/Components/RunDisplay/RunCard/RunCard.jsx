@@ -7,15 +7,6 @@ import "./RunCard.css";
 const RunCard = (props) => {
   const [thisDate, setThisDate] = useState("");
 
-  const arrayConverter = (arr) => {
-    return arr
-      .substr(1, arr.length - 2)
-      .split(", ")
-      .map((card) => card);
-  };
-
-  const masterDeck = arrayConverter(props.data.master_deck);
-
   useEffect(() => {
     var rawDate = String(props.data.local_time);
     setThisDate(
@@ -28,14 +19,15 @@ const RunCard = (props) => {
   }, []);
 
   const handleClick = () => {
-    props.setThisRun(props.data);
-    props.setDate(thisDate);
+    // props.setThisRun(props.runData);
+    // props.setDate(thisDate);
+    console.log(props.runData);
   };
   // console.log(props.data.character.toLowerCase());
   return (
     <>
       <div className="container" style={{ position: "relative" }}>
-        {props.data.victory ? (
+        {props.runData.victory ? (
           <Sparkle
             color="#ffd700"
             className="victorySparkle"
