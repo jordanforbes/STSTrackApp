@@ -1,27 +1,23 @@
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { arrayConverter } from "../../../utils";
 import CardBox from "./CardBox/CardBox";
+import RelicBox from "./RelicBox/RelicBox";
 // import "./RunDetails.css";
 
 const RunDetails = (props) => {
+  const masterDeck = arrayConverter(props.thisRun.master_deck);
+  const relics = arrayConverter(props.thisRun.relics);
   const thisDeck = [];
+  const deckMap = {};
+
+  // the amount of cards in the deck
   let count = 0;
 
+  // back button
   const clearBtn = () => {
     props.setThisRun(false);
   };
-
-  const arrayConverter = (arr) => {
-    return arr
-      .substr(1, arr.length - 2)
-      .split(", ")
-      .map((card) => card);
-  };
-  const masterDeck = arrayConverter(props.thisRun.master_deck);
-  const relics = arrayConverter(props.thisRun.relics);
-
-  const deckMap = {};
-  const deckArr = [];
 
   // adds to deckMap obj which is structured as such: { card_id1: num, card_id2: num}
   masterDeck.forEach((card) => {
@@ -29,19 +25,8 @@ const RunDetails = (props) => {
     deckMap[card] = (deckMap[card] || 0) + 1;
   });
 
-  console.log("deckmap");
-  console.log(deckMap);
-
-  // creates deckArr which has the format of [nX cardName(+1)], ex: [Bash+, 4x Strike_R]
-  Object.keys(deckMap).forEach((card) => {
-    const count = deckMap[card];
-    let thisCard = card;
-
-    deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
-  });
-
-  console.log("deckArr");
-  console.log(deckArr);
+  // console.log("deckmap");
+  // console.log(deckMap);
 
   // searches for card information based on an entered card id
   const findCard = (card) => {
@@ -53,11 +38,12 @@ const RunDetails = (props) => {
       count: 0,
       cardInfo: {},
     };
-    if (card[card.length - 2] === "+") {
-      // if there's only one upgrade, then only the plus is necessary, but more than one means the number should be there
-      // basically only necessary for searing blow on basegame cards, but will become needed for mods
-      cardData.upgrade = parseInt(card[card.length - 1]);
 
+    // checks if card is upgraded and how many times
+    // the number of times is really only applicable for searing blow and modded cards
+    if (card[card.length - 2] === "+") {
+      cardData.upgrade = parseInt(card[card.length - 1]);
+      // it's necessary to slice the upgrade off of the id in order to search through the card list
       thisCard = card.slice(0, card.length - 2);
     } else {
       thisCard = card;
@@ -74,12 +60,8 @@ const RunDetails = (props) => {
     thisDeck.push(findCard(dCard));
   });
 
-  console.log("THISDECKTEST");
-  console.log(thisDeck);
-
-  const RelicBox = (props) => {
-    return <div className="deckRelic">{props.relic}</div>;
-  };
+  // console.log("THISDECKTEST");
+  // console.log(thisDeck);
 
   return (
     <>
