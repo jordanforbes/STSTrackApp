@@ -43,29 +43,20 @@ const RunDetails = (props) => {
   console.log("deckArr");
   console.log(deckArr);
 
+  // searches for card information based on an entered card id
   const findCard = (card) => {
     let thisCard = "";
-    let upgrade = "";
 
     const cardData = {
-      id: "",
       name: "",
       upgrade: 0,
-      cost: "",
-      type: "",
-      color: "",
-      description: "",
-      rarity: "",
       count: 0,
+      cardInfo: {},
     };
     if (card[card.length - 2] === "+") {
       // if there's only one upgrade, then only the plus is necessary, but more than one means the number should be there
       // basically only necessary for searing blow on basegame cards, but will become needed for mods
-      if (card[card.length - 1] === "1") {
-        upgrade = "+";
-      } else {
-        upgrade = card.slice(card.length - 2, card.length);
-      }
+      cardData.upgrade = parseInt(card[card.length - 1]);
 
       thisCard = card.slice(0, card.length - 2);
     } else {
@@ -73,13 +64,18 @@ const RunDetails = (props) => {
     }
 
     let obj = props.cardData.find((cardObj) => cardObj.id === thisCard);
-    // pushes to deck, remove this
-    // thisDeck.push(obj.name + upgrade);
+    cardData.name = obj.name;
+    cardData.cardInfo = obj;
+
+    return cardData;
   };
 
   masterDeck.map((dCard) => {
-    findCard(dCard);
+    thisDeck.push(findCard(dCard));
   });
+
+  console.log("THISDECKTEST");
+  console.log(thisDeck);
 
   const RelicBox = (props) => {
     return <div className="deckRelic">{props.relic}</div>;
