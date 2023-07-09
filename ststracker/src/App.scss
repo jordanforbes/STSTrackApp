@@ -27,12 +27,6 @@ div {
   /* font-size: larger; */
 }
 
-@font-face {
-  font-family: "Aladin";
-  /* font-size: 10px; */
-  src: url("./fonts/Aladin-Regular.ttf") format("truetype");
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -46,6 +40,12 @@ div {
 
 .App-link {
   color: #61dafb;
+}
+
+@font-face {
+  font-family: "Aladin";
+  /* font-size: 10px; */
+  src: url("./fonts/Aladin-Regular.ttf") format("truetype");
 }
 
 @keyframes App-logo-spin {

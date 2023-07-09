@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
-import "./RunDetails.css";
+// import "./RunDetails.css";
 
 const RunDetails = (props) => {
   const [deckObj, setDeckObj] = useState({});
-  // const [thisDeck, setThisDeck] = useState([]);
+
   const cardObjs = [];
   const thisDeck = [];
   const clearBtn = () => {
@@ -20,11 +20,6 @@ const RunDetails = (props) => {
       .map((card) => card);
   };
   const masterDeck = arrayConverter(props.thisRun.master_deck);
-  console.log(props.thisRun.master_deck);
-  console.log(props.thisRun.master_deck.length);
-
-  console.log(masterDeck);
-  console.log(masterDeck.length);
   const relics = arrayConverter(props.thisRun.relics);
 
   const deckMap = {};
@@ -41,29 +36,25 @@ const RunDetails = (props) => {
     deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
   });
 
-  console.log("masterDeck map");
   masterDeck.map((dCard) => {
     let thisCard = "";
-    let upGrade = "";
-    console.log(dCard);
-    console.log(dCard[dCard.length - 2]);
+    let upgrade = "";
     if (dCard[dCard.length - 2] === "+") {
-      console.log(dCard.length - 2, dCard.length - 1);
-      upGrade = dCard.slice(dCard.length - 2, dCard.length);
-      // console.log(dCard.slice(dCard.slice(0, dCard.length - 2)));
-      console.log(upGrade);
+      // if there's only one upgrade, then only the plus is necessary, but more than one means the number should be there
+      // basically only necessary for searing blow on basegame cards, but will become needed for mods
+      if (dCard[dCard.length - 1] === "1") {
+        upgrade = "+";
+      } else {
+        upgrade = dCard.slice(dCard.length - 2, dCard.length);
+      }
+
       thisCard = dCard.slice(0, dCard.length - 2);
     } else {
-      console.log("HIT ELSE");
       thisCard = dCard;
     }
-    console.log("THISCARDTEST");
-    console.log(thisCard);
+
     let obj = props.cardData.find((cardObj) => cardObj.id === thisCard);
-    // cardObjs.push(obj);
-    console.log("obj");
-    console.log(obj);
-    thisDeck.push(obj.name + upGrade);
+    thisDeck.push(obj.name + upgrade);
   });
 
   cardObjs.map((card) => {
@@ -83,8 +74,6 @@ const RunDetails = (props) => {
     ([card, count]) => `${count}x ${card}`
   );
 
-  console.log(readyArr);
-  console.log(Object.values(reducedDeck));
   return (
     <>
       <div className="container">

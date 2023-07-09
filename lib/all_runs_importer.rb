@@ -47,7 +47,8 @@ json_files.each do |file_path|
     relics: "[" + record["relics"].join(", ") + "]",
     seed: record["seed_played"],
     heart_kill: heart_kill,
-    local_time: BigDecimal(record["local_time"])
+    local_time: BigDecimal(record["local_time"]),
+    run_id: record["run_id"]
   }
 
   StsRun.create(mapped_records)

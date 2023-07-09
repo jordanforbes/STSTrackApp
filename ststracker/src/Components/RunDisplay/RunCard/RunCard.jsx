@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Sparkle from "react-sparkle";
 
-import "./RunCard.css";
+// import "./RunCard.css";
 
 const RunCard = (props) => {
   const [thisDate, setThisDate] = useState("");

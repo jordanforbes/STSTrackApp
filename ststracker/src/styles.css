@@ -1,0 +1,194 @@
+.App {
+  text-align: center;
+}
+
+div {
+  /* border: 1px dotted red; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.titleSpace {
+  margin-top: 10px;
+  /* font-size: 10px !important; */
+  text-align: left;
+}
+
+.titleFont {
+  font-family: "Aladin", sans-serif;
+  /* font-size: larger; */
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@font-face {
+  font-family: "Aladin";
+  /* font-size: 10px; */
+  src: url("./fonts/Aladin-Regular.ttf") format("truetype");
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.scrollDiv {
+  /* background-color: rgb(173, 192, 212); */
+  height: 600px;
+  overflow: auto;
+}
+
+.cardCount {
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.runcard {
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  margin-top: 5px;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.victorySparkle {
+  height: 5rem;
+}
+
+.victory {
+  /* border: 4px solid gold; */
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.charLabel {
+  /* border-right: 4px solid white; */
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.dateLabel {
+  margin-top: -1rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.failure {
+  color: white;
+}
+
+.ironclad {
+  /* background-color: rgb(159, 24, 24); */
+  background: linear-gradient(90deg, #9f1818, #d80101);
+}
+
+.ironcladVictory {
+  /* background-color: rgb(159, 24, 24); */
+  background: linear-gradient(90deg, #9f1818, #ff7979);
+}
+
+.silent {
+  background: linear-gradient(90deg, #01522f, #04844d);
+}
+
+.defect {
+  background: linear-gradient(90deg, #3a36aa, #3f39ff);
+}
+
+.watcher {
+  background: linear-gradient(90deg, #680068, #b303b3);
+}
+
+.detailsBtn {
+  font-weight: bold;
+  border: none;
+}
+
+.vicBtn {
+  color: rgb(207, 0, 0);
+}
+
+.vicBtn:hover {
+  color: rgb(207, 0, 0);
+  background-color: rgb(250, 206, 206);
+}
+
+.vicBtn:active {
+  color: rgb(207, 0, 0) !important;
+  background-color: rgb(209, 171, 171) !important;
+}
+
+.failBtn {
+  color: rgb(13, 1, 82);
+}
+
+.failBtn:hover {
+  color: rgb(13, 1, 82);
+  /* color: White; */
+  background-color: rgb(189, 189, 241);
+}
+
+.failBtn:active {
+  color: rgb(13, 1, 82) !important;
+  /* color: White; */
+  background-color: rgb(146, 146, 191) !important;
+}
+
+.scrollDivLight {
+  height: 500px;
+  overflow: auto;
+}
+
+.deckCard {
+  padding: 5px;
+  margin: 3px;
+  padding-bottom: 5px;
+  display: block;
+  background-color: rgb(47, 47, 47);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 200px;
+  float: left;
+  border-radius: 5px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.deckRelic {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 3px;
+  display: block;
+  border: 2px solid black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  width: 200px;
+  float: left;
+}
+
+/*# sourceMappingURL=styles.css.map */

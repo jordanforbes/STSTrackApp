@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./RunDisplay.css";
+// import "./RunDisplay.css";
 
 import RunCard from "./RunCard/RunCard";
 import RunDetails from "./RunDetails/RunDetails";

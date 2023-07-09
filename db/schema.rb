@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_05_163544) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_09_182207) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_163544) do
     t.string "seed"
     t.boolean "heart_kill", default: false
     t.bigint "local_time"
+    t.string "play_id"
+    t.string "run_id"
     t.check_constraint "ascension >= 0 AND ascension <= 20", name: "check_ascension_range"
   end
 
