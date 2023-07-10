@@ -1,8 +1,11 @@
+////////////////////////////////////////////////
+// Shows detailed description of each run
+////////////////////////////////////////////////
+
 import { Button } from "react-bootstrap";
 import { arrayConverter } from "../../../utils";
 import CardBox from "./CardBox/CardBox";
 import RelicBox from "./RelicBox/RelicBox";
-// import "./RunDetails.css";
 
 const RunDetails = (props) => {
   const masterDeck = arrayConverter(props.thisRun.master_deck);
@@ -20,7 +23,7 @@ const RunDetails = (props) => {
     props.setThisRun(false);
   };
 
-  // adds to deckMap obj
+  // counts how many cards and adds them to deckMap obj
   masterDeck.forEach((card) => {
     count++;
     deckMap[card] = (deckMap[card] || 0) + 1;

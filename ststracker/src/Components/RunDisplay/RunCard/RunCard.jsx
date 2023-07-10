@@ -1,21 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Shows each individual run on the master list
+////////////////////////////////////////////////////////////////////////////
+
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Sparkle from "react-sparkle";
-
-// import "./RunCard.css";
+import { arrayConverter } from "../../../utils";
 
 const RunCard = (props) => {
   const [thisDate, setThisDate] = useState("");
-
-  const arrayConverter = (arr) => {
-    return arr
-      .substr(1, arr.length - 2)
-      .split(", ")
-      .map((card) => card);
-  };
-
   const masterDeck = arrayConverter(props.data.master_deck);
 
+  // formats the date
   useEffect(() => {
     var rawDate = String(props.data.local_time);
     setThisDate(
@@ -31,7 +27,7 @@ const RunCard = (props) => {
     props.setThisRun(props.data);
     props.setDate(thisDate);
   };
-  // console.log(props.data.character.toLowerCase());
+
   return (
     <>
       <div className="container" style={{ position: "relative" }}>
