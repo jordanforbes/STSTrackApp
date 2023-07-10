@@ -22,6 +22,7 @@ const RunDisplay = (props) => {
               thisRun={thisRun}
               setThisRun={setThisRun}
               cardData={props.cardData}
+              relicData={props.relicData}
             />
           ) : (
             props.runData

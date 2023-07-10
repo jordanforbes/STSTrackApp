@@ -16,7 +16,8 @@ const RunDetails = (props) => {
   const deckMap = {};
 
   // the amount of cards in the deck
-  let count = 0;
+  let deckCount = 0;
+  let relicCount = 0;
 
   // back button
   const clearBtn = () => {
@@ -25,8 +26,13 @@ const RunDetails = (props) => {
 
   // counts how many cards and adds them to deckMap obj
   masterDeck.forEach((card) => {
-    count++;
+    deckCount++;
     deckMap[card] = (deckMap[card] || 0) + 1;
+  });
+
+  // you don't need to count each relic because you can only have one of each in the basegame
+  relics.forEach((relic) => {
+    relicCount++;
   });
 
   return (
@@ -64,23 +70,24 @@ const RunDetails = (props) => {
           <div className="col-md-5"></div>
           <div className="col-md-4">Seed: {props.thisRun.seed}</div>
         </div>
-        <div className="row">Relics:</div>
-        <div className="row">
-          {relics.map((relic) => (
-            <RelicBox relic={relic} />
-          ))}
-        </div>
-        <div className="row">
-          <div className="col-md-3">Cards in Deck: {count}</div>
-        </div>
-        <div className="row deckRow">
-          <div className="col-md-12 scrollDivLight">
-            {Object.entries(deckMap).map(([card]) => (
-              <CardBox
-                cardId={card}
-                count={deckMap[card]}
-                cardData={props.cardData}
-              />
+        <div className="row"></div>
+        <div className="row deckRow scrollDivLight">
+          <div className="col-md-6 ">
+            <div className="row">Cards in Deck: {deckCount}</div>
+            <div className="row">
+              {Object.entries(deckMap).map(([card]) => (
+                <CardBox
+                  cardId={card}
+                  count={deckMap[card]}
+                  cardData={props.cardData}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="col-md-6 ">
+            <div className="row">Number of Relics: {relicCount}</div>
+            {relics.map((relic) => (
+              <RelicBox relicId={relic} relicData={props.relicData} />
             ))}
           </div>
         </div>

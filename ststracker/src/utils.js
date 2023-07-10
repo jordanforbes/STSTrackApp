@@ -50,3 +50,7 @@ export const findCardData = (card, data) => {
 
   return data.find((cardObj) => cardObj.id === card_id);
 };
+
+export const findRelicData = (relic_id, data) => {
+  return data.find((relicObj) => relicObj.id === relic_id);
+};

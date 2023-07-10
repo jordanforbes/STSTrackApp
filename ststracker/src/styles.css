@@ -191,4 +191,22 @@ div {
   float: left;
 }
 
+.cardType {
+  position: relative;
+  float: left;
+  font-weight: lighter;
+  font-size: smaller;
+}
+
+.cardDesc {
+  text-decoration: none;
+  color: lightgray;
+  position: relative;
+  float: right;
+}
+
+.cardDesc:hover {
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */

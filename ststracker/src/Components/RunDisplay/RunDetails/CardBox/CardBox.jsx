@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////////////
 
 import { findCardData } from "../../../../utils";
+import CardToolTip from "./CardToolTip/CardToolTip";
 
 const CardBox = (props) => {
   const cardId = props.cardId;
@@ -21,6 +22,9 @@ const CardBox = (props) => {
     <div className="deckCard ">
       {count}x {cardInfo.name}
       {upgrade}
+      <CardToolTip cardInfo={cardInfo} />
+      <br />
+      <div className="cardType">{cardInfo.type}</div>
     </div>
   );
 };
