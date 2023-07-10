@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { arrayConverter, findCard } from "../../../utils";
+import { arrayConverter } from "../../../utils";
 import CardBox from "./CardBox/CardBox";
 import RelicBox from "./RelicBox/RelicBox";
 // import "./RunDetails.css";
@@ -8,7 +7,9 @@ import RelicBox from "./RelicBox/RelicBox";
 const RunDetails = (props) => {
   const masterDeck = arrayConverter(props.thisRun.master_deck);
   const relics = arrayConverter(props.thisRun.relics);
-  const thisDeck = [];
+
+  // keeps track of how many of each card is in the deck
+  // structure: { card_id1: num, card_id2: num}
   const deckMap = {};
 
   // the amount of cards in the deck
@@ -19,35 +20,11 @@ const RunDetails = (props) => {
     props.setThisRun(false);
   };
 
-  // adds to deckMap obj which is structured as such: { card_id1: num, card_id2: num}
+  // adds to deckMap obj
   masterDeck.forEach((card) => {
     count++;
     deckMap[card] = (deckMap[card] || 0) + 1;
   });
-
-  // console.log("deckmap");
-  // console.log(deckMap);
-
-  // TODO: check if card is already in thisDeck, and if so, don't push a new one and then add to the count.
-  // TODO: needs to check if it's also upgraded
-  masterDeck.map((dCard) => {
-    let upgrade = 0;
-    let card_id = "";
-
-    if (dCard[dCard.length - 2] === "+") {
-      upgrade = parseInt(dCard[dCard.length - 1]);
-      // it's necessary to slice the upgrade off of the id in order to search through the card list
-      card_id = dCard.slice(0, dCard.length - 2);
-    } else {
-      card_id = dCard;
-    }
-    console.log("masterdeck map", dCard);
-
-    thisDeck.push(findCard(dCard, props.cardData));
-  });
-
-  console.log("THISDECKTEST");
-  console.log(thisDeck);
 
   return (
     <>
