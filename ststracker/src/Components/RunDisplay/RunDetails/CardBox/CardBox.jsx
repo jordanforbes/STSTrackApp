@@ -1,14 +1,23 @@
+import { findCardData } from "../../../../utils";
+
 const CardBox = (props) => {
-  const cardName = props.cardName;
-  const upgrade = "";
-  const type = "";
-  const color = "";
+  // const cardName = props.cardName;
+  const cardId = props.cardId;
   const count = props.count;
-  console.log("CARDBOXTEST");
-  console.log(cardName, count);
+  const cardInfo = findCardData(cardId, props.cardData);
+  let upgrade = "";
+
+  if (cardId[cardId.length - 2] === "+") {
+    if (cardId[cardId.length - 1] !== "1") {
+      upgrade = cardId.slice(cardId.length - 2, cardId.length);
+    }
+    upgrade = "+";
+  }
+
   return (
     <div className="deckCard ">
-      {count}x {cardName}
+      {count}x {cardInfo.name}
+      {upgrade}
     </div>
   );
 };
