@@ -1,11 +1,10 @@
 ////////////////////////////////////////////////////////////
-// Displays each card in the deck on the RunDetails page
+// Displays each card in the deck on the RunDetails component
 ////////////////////////////////////////////////////////////////
 
 import { findCardData } from "../../../../utils";
 
 const CardBox = (props) => {
-  // const cardName = props.cardName;
   const cardId = props.cardId;
   const count = props.count;
   const cardInfo = findCardData(cardId, props.cardData);

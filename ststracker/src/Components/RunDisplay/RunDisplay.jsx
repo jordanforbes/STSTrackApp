@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+////////////////////////////////////////////////////////////////
+// Displays master list of all runs
+////////////////////////////////////////////////////////////////
 
-// import "./RunDisplay.css";
+import { useState } from "react";
 
 import RunCard from "./RunCard/RunCard";
 import RunDetails from "./RunDetails/RunDetails";
@@ -8,7 +10,6 @@ import RunDetails from "./RunDetails/RunDetails";
 const RunDisplay = (props) => {
   const [thisRun, setThisRun] = useState(false);
   const [date, setDate] = useState(false);
-  // console.log(thisRun);
 
   return (
     <div className="container">
