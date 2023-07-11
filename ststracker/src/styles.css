@@ -198,6 +198,34 @@ div {
   font-size: smaller;
 }
 
+.rare {
+  border: 4px #ffd700 solid;
+}
+
+.uncommon {
+  border: 4px #1ea1ff solid;
+}
+
+.common {
+  border: 4px lightgray solid;
+}
+
+.ironcard {
+  background-color: #9f1818 !important;
+}
+
+.silentcard {
+  background-color: #01522f;
+}
+
+.defectcard {
+  background-color: #3a36aa;
+}
+
+.watchercard {
+  background-color: #680068;
+}
+
 .cardDesc {
   text-decoration: none;
   color: lightgray;

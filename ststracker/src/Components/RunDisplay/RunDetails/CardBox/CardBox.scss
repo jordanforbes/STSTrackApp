@@ -6,6 +6,32 @@
   // padding: 10px;
 }
 
-.deckCard {
-  // height: 50px;
+// .deckCard {
+//   // height: 50px;
+//   background-color: black;
+// }
+.rare {
+  border: 4px $gold solid;
+}
+.uncommon {
+  border: 4px #1ea1ff solid;
+}
+.common {
+  border: 4px lightgray solid;
+}
+
+.ironcard {
+  background-color: $ironclad !important;
+}
+
+.silentcard {
+  background-color: $silent;
+}
+
+.defectcard {
+  background-color: $defect;
+}
+
+.watchercard {
+  background-color: $watcher;
 }

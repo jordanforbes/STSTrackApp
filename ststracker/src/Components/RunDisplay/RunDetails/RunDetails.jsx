@@ -72,7 +72,7 @@ const RunDetails = (props) => {
         </div>
         <div className="row"></div>
         <div className="row deckRow scrollDivLight">
-          <div className="col-md-6 ">
+          <div className="col-md-8 ">
             <div className="row">Cards in Deck: {deckCount}</div>
             <div className="row">
               {Object.entries(deckMap).map(([card]) => (
@@ -84,7 +84,7 @@ const RunDetails = (props) => {
               ))}
             </div>
           </div>
-          <div className="col-md-6 ">
+          <div className="col-md-2 ">
             <div className="row">Number of Relics: {relicCount}</div>
             {relics.map((relic) => (
               <RelicBox relicId={relic} relicData={props.relicData} />
