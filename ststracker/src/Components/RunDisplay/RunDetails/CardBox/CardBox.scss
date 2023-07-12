@@ -11,13 +11,19 @@
 //   background-color: black;
 // }
 .rare {
-  border: 4px $gold solid;
+  border: 6px $gold solid;
 }
 .uncommon {
-  border: 4px #1ea1ff solid;
+  border: 6px #1ea1ff solid;
 }
 .common {
-  border: 4px lightgray solid;
+  border: 6px lightgray solid;
+}
+.upgradedTitle {
+  color: rgb(0, 255, 0);
+}
+.quantity {
+  float: right;
 }
 
 .ironcard {

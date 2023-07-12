@@ -13,6 +13,16 @@ const CardBox = (props) => {
   const cardInfo = findCardData(cardId, props.cardData);
   let upgrade = "";
 
+  const findUpgrade = (str) => {
+    return str.match(/\((.*?)\)/g);
+  };
+
+  console.log("Name: " + cardInfo.name);
+  console.log("og cost: " + cardInfo.cost);
+  console.log("check Cost: " + findUpgrade(cardInfo.cost));
+  console.log("og description: " + cardInfo.description);
+  console.log("check description: " + findUpgrade(cardInfo.description));
+
   console.log(cardInfo);
   if (cardId[cardId.length - 2] === "+") {
     if (cardId[cardId.length - 1] !== "1") {
@@ -33,8 +43,11 @@ const CardBox = (props) => {
             : "common"
         }`}
       >
-        {count}x <span className="cardName">{cardInfo.name}</span>
-        {upgrade}
+        <span className={`cardName ${upgrade !== "" ? "upgradedTitle" : ""}`}>
+          {cardInfo.name}
+          {upgrade}
+          <span className={`quantity`}>x{count} </span>
+        </span>
         {/* <CardToolTip cardInfo={cardInfo} /> */}
         <br />
         <div className="cardType">{cardInfo.type}</div>
