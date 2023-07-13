@@ -8,7 +8,6 @@ import CardBox from "./CardBox/CardBox";
 import RelicBox from "./RelicBox/RelicBox";
 import ViewBox from "./ViewBox/ViewBox";
 
-// TODO: upgraded cards are not being added
 const RunDetails = (props) => {
   const masterDeck = arrayConverter(props.thisRun.master_deck);
   const relics = arrayConverter(props.thisRun.relics);
