@@ -26,6 +26,7 @@ const RunCard = (props) => {
   const handleClick = () => {
     props.setThisRun(props.data);
     props.setDate(thisDate);
+    window.scrollTo(0, 0);
   };
 
   return (
