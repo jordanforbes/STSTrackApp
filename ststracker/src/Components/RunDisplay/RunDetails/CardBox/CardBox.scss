@@ -10,6 +10,9 @@
 //   // height: 50px;
 //   background-color: black;
 // }
+// .custTooltip {
+//   color: black;
+// }
 .rare {
   border: 6px $gold solid;
 }
@@ -45,3 +48,36 @@
 // .defectPic {
 //   background-image: url("../../../../images/characters/defect-face.png");
 // }
+
+.custTooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.tooltip-text {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  height: fit-content;
+}
+
+.custTooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.custTooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  z-index: 20;
+}

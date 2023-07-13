@@ -35,7 +35,7 @@ const CardBox = (props) => {
     <>
       {/* <a className={`cardDesc ${cardInfo.id}`}> */}
       <div
-        className={`deckCard ${
+        className={`deckCard custTooltip ${
           cardInfo.rarity === "Rare"
             ? "rare"
             : cardInfo.rarity === "Uncommon"
@@ -52,15 +52,18 @@ const CardBox = (props) => {
         <br />
         <div className="cardType">{cardInfo.type}</div>
         <br />
-        cost: {cardInfo.cost}
+        {/* cost: {cardInfo.cost}
         <br />
         <br />
-        {cardInfo.description}
-      </div>
-      {/* <Tooltip anchorSelect={`.${cardInfo.description}`} place="top">
+        {cardInfo.description} */}
+        {/* </div> */}
+        {/* <Tooltip anchorSelect={`.${cardInfo.description}`} place="top">
           {cardInfo.description}
         </Tooltip>
       </a> */}
+        {/* <div class="custTooltip"> */}
+        <span class="tooltip-text">{cardInfo.description}</span>
+      </div>
     </>
   );
 };

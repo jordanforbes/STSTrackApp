@@ -5,6 +5,26 @@
   overflow: auto;
 }
 
+.detailHeader {
+  border: 1px solid black;
+}
+
+.relicScroll {
+  height: 300px;
+  width: fit-content;
+  border: 1px solid black;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.relicBox {
+  border: 1px solid black;
+  width: 300px;
+  margin: 10px;
+  // width: 120%;
+}
+
 .deckCard {
   padding: 5px;
   margin: 3px;

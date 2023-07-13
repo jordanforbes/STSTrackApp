@@ -39,60 +39,70 @@ const RunDetails = (props) => {
   return (
     <>
       <div className="container">
-        <div className="row">
-          <div className="col-md-2">{props.thisRun.character}</div>
-          <div className="col-md-1">A{props.thisRun.ascension}</div>
-          <div className="col-md-1"></div>
+        <div className="row ">
+          <div className="row ">
+            <div className="col-md-2">{props.thisRun.character}</div>
+            <div className="col-md-1">A{props.thisRun.ascension}</div>
+            <div className="col-md-1"></div>
 
-          <div className="col-md-6">
-            {!props.thisRun.victory
-              ? "Died on Floor " +
-                props.thisRun.floor +
-                " to " +
-                props.thisRun.killed_by
-              : props.thisRun.heart_kill
-              ? "Defeated the Heart!"
-              : "Victory!"}
+            <div className="col-md-6">
+              {!props.thisRun.victory
+                ? "Died on Floor " +
+                  props.thisRun.floor +
+                  " to " +
+                  props.thisRun.killed_by
+                : props.thisRun.heart_kill
+                ? "Defeated the Heart!"
+                : "Victory!"}
+            </div>
+            <div className="col-md-2">
+              <Button
+                variant="outline-secondary"
+                className="btn"
+                onClick={clearBtn}
+              >
+                Back
+              </Button>
+            </div>
+            {/* <div className="row"></div> */}
           </div>
-          <div className="col-md-2">
-            <Button
-              variant="outline-secondary"
-              className="btn"
-              onClick={clearBtn}
-            >
-              Back
-            </Button>
-          </div>
-          <div className="row"></div>
-        </div>
-        <div className="row cardCount">
-          <div className="col-md-2">{props.date}</div>
+          <div className="row cardCount">
+            <div className="col-md-2">{props.date}</div>
 
-          <div className="col-md-5"></div>
-          <div className="col-md-4">Seed: {props.thisRun.seed}</div>
+            <div className="col-md-5"></div>
+            <div className="col-md-4">Seed: {props.thisRun.seed}</div>
+          </div>
           <div className="row">
-            <ViewBox character={props.thisRun.character} />
-          </div>
-        </div>
-        <div className="row"></div>
-        <div className="row deckRow scrollDivLight">
-          <div className="col-md-8 ">
-            <div className="row">Cards in Deck: {deckCount}</div>
-            <div className="row">
-              {Object.entries(deckMap).map(([card]) => (
-                <CardBox
-                  cardId={card}
-                  count={deckMap[card]}
-                  cardData={props.cardData}
-                />
-              ))}
+            <div className="col-md-3"></div>
+            <div className="col-md-4">
+              <ViewBox character={props.thisRun.character} />
+            </div>
+            <div className="col-md-1"></div>
+            <div className="col-md-3 ">
+              {/* <div className="relicBox"> */}
+              <div className="row ">Number of Relics: {relicCount}</div>
+              <div className="row relicScroll">
+                {relics.map((relic) => (
+                  <RelicBox relicId={relic} relicData={props.relicData} />
+                ))}
+                {/* </div> */}
+              </div>
             </div>
           </div>
-          <div className="col-md-2 ">
-            <div className="row">Number of Relics: {relicCount}</div>
-            {relics.map((relic) => (
-              <RelicBox relicId={relic} relicData={props.relicData} />
-            ))}
+          <div className="row"></div>
+          <div className="row deckRow  scrollDivLight">
+            <div className="col-md-12 ">
+              <div className="row">Cards in Deck: {deckCount}</div>
+              <div className="row">
+                {Object.entries(deckMap).map(([card]) => (
+                  <CardBox
+                    cardId={card}
+                    count={deckMap[card]}
+                    cardData={props.cardData}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
