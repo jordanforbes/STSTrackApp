@@ -3,14 +3,24 @@ import { Button } from "react-bootstrap";
 import CardBox from "./CardBox/CardBox";
 // import "./RunDetails.css";
 
+// TODO: upgraded cards are not being added
 const RunDetails = (props) => {
   const thisDeck = [];
+<<<<<<< HEAD
   let count = 0;
 
+=======
+  const reducedDeck = {};
+  // props.setThisRun(true)
+  // props.setMaterDeck(props.thisRun.master_deck)
+
+  // return to previous page
+>>>>>>> 66a1a4d44d9578685947271ff02f0929fac48c5f
   const clearBtn = () => {
     props.setThisRun(false);
   };
 
+<<<<<<< HEAD
   const arrayConverter = (arr) => {
     return arr
       .substr(1, arr.length - 2)
@@ -26,6 +36,32 @@ const RunDetails = (props) => {
   // adds to deckMap obj which is structured as such: { card_id1: num, card_id2: num}
   masterDeck.forEach((card) => {
     count++;
+=======
+  // converts string of deck cards to array
+  // const arrayConverter = (arr) => {
+  //   return arr
+  //     .substr(1, arr.length - 2)
+  //     .split(", ")
+  //     .map((card) => card);
+  // };
+  // const masterDeck = arrayConverter(props.thisRun.master_deck);
+  // const relics =
+  // masterDeck.forEach((item) => {
+  //   deckMap[item] = (deckMap[item] || 0) + 1;
+  // });
+  const deckMap = {};
+  const deckArr = [];
+  console.log("RUN DETAILS!!!!!");
+  // console.log(props.thisRun.master_deck);
+  // Object.keys(deckMap).forEach((item) => {
+  //   const count = deckMap[item];
+  //   console.log(`${item} x${count})`);
+  // });
+  // console.log(deckMap);
+  console.log("MASTERDECK");
+  console.log(props.masterDeck);
+  props.masterDeck.forEach((card) => {
+>>>>>>> 66a1a4d44d9578685947271ff02f0929fac48c5f
     deckMap[card] = (deckMap[card] || 0) + 1;
   });
 
@@ -40,6 +76,7 @@ const RunDetails = (props) => {
     deckArr.push(`${count > 1 ? count + "x" : ""} ${thisCard}`);
   });
 
+<<<<<<< HEAD
   console.log("deckArr");
   console.log(deckArr);
 
@@ -70,6 +107,21 @@ const RunDetails = (props) => {
       thisCard = card.slice(0, card.length - 2);
     } else {
       thisCard = card;
+=======
+  props.masterDeck.map((dCard) => {
+    console.log("dCardCheck");
+    console.log(dCard);
+    let obj = props.cardData.find((cardObj) => cardObj.id === dCard);
+    cardObjs.push(obj);
+  });
+
+  cardObjs.map((card) => {
+    let card_id = card;
+    let suffix = "";
+
+    if (card && "name" in card) {
+      thisDeck.push(card.name);
+>>>>>>> 66a1a4d44d9578685947271ff02f0929fac48c5f
     }
 
     let obj = props.cardData.find((cardObj) => cardObj.id === thisCard);
@@ -85,6 +137,28 @@ const RunDetails = (props) => {
     return <div className="deckRelic">{props.relic}</div>;
   };
 
+<<<<<<< HEAD
+=======
+  thisDeck.forEach((card) => {
+    reducedDeck[card] = (reducedDeck[card] || 0) + 1;
+  });
+
+  // const obj = {
+  //   key1: "value1",
+  //   key2: "value2",
+  //   key3: "value3",
+  // };
+  // const mappedArray = Object.entries(obj).map(
+  //   ([key, value]) => `${key}: ${value}`
+  // );
+
+  const readyArr = Object.entries(reducedDeck).map(
+    ([card, count]) => `${count}x ${card}`
+  );
+
+  console.log(readyArr);
+  console.log(Object.values(reducedDeck));
+>>>>>>> 66a1a4d44d9578685947271ff02f0929fac48c5f
   return (
     <>
       <div className="container">
@@ -122,8 +196,13 @@ const RunDetails = (props) => {
         </div>
         <div className="row">Relics:</div>
         <div className="row">
+<<<<<<< HEAD
           {relics.map((relic) => (
             <RelicBox relic={relic} />
+=======
+          {props.relics.map((relic) => (
+            <div className="deckRelic">{relic}</div>
+>>>>>>> 66a1a4d44d9578685947271ff02f0929fac48c5f
           ))}
         </div>
         <div className="row">
