@@ -90,12 +90,13 @@ const RunDetails = (props) => {
             </div>
           </div>
           <div className="row"></div>
-          <div className="row deckRow  scrollDivLight">
+          <div className="row deckRow  ">
             <div className="col-md-12 ">
               <div className="row">Cards in Deck: {deckCount}</div>
               <div className="row">
                 {Object.entries(deckMap).map(([card]) => (
                   <CardBox
+                    character={props.thisRun.character}
                     cardId={card}
                     count={deckMap[card]}
                     cardData={props.cardData}
