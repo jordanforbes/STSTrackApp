@@ -13,7 +13,7 @@ const RunDisplay = (props) => {
   const [date, setDate] = useState(false);
 
   return (
-    <div className="container">
+    <div className="container runDisplayBox">
       <div className={`row ${thisRun ? "" : "detailsbg"}`}>
         <div className="col-md-2"></div>
         <div className={`col-md-9 ${thisRun ? "" : "scrollDiv"}`}>
