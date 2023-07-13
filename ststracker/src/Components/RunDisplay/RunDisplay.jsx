@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import RunCard from "./RunCard/RunCard";
 import RunDetails from "./RunDetails/RunDetails";
+// import ViewBox from "./RunDetails/ViewBox/ViewBox";
 
 const RunDisplay = (props) => {
   const [thisRun, setThisRun] = useState(false);

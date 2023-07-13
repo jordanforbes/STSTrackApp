@@ -6,6 +6,7 @@ import { Button } from "react-bootstrap";
 import { arrayConverter } from "../../../utils";
 import CardBox from "./CardBox/CardBox";
 import RelicBox from "./RelicBox/RelicBox";
+import ViewBox from "./ViewBox/ViewBox";
 
 const RunDetails = (props) => {
   const masterDeck = arrayConverter(props.thisRun.master_deck);
@@ -69,6 +70,9 @@ const RunDetails = (props) => {
 
           <div className="col-md-5"></div>
           <div className="col-md-4">Seed: {props.thisRun.seed}</div>
+          <div className="row">
+            <ViewBox character={props.thisRun.character} />
+          </div>
         </div>
         <div className="row"></div>
         <div className="row deckRow scrollDivLight">
