@@ -55,12 +55,6 @@ div {
     transform: rotate(360deg);
   }
 }
-.scrollDiv {
-  /* background-color: rgb(173, 192, 212); */
-  height: 600px;
-  overflow: auto;
-}
-
 .cardCount {
   margin-bottom: 10px;
   border-bottom: 1px solid black;
@@ -158,9 +152,40 @@ div {
   background-color: rgb(146, 146, 191) !important;
 }
 
+.ironcladPic {
+  height: 275px;
+}
+
+.viewPic {
+  margin-top: 100px;
+}
+
 .scrollDivLight {
   height: 500px;
   overflow: auto;
+}
+
+.runDisplayBox {
+  padding-bottom: 200px;
+}
+
+.detailHeader {
+  border: 1px solid black;
+}
+
+.relicScroll {
+  height: 300px;
+  width: fit-content;
+  border: 1px solid black;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.relicBox {
+  border: 1px solid black;
+  width: 300px;
+  margin: 10px;
 }
 
 .deckCard {
@@ -189,6 +214,82 @@ div {
   font-weight: bold;
   width: 200px;
   float: left;
+}
+
+.cardType {
+  position: relative;
+  float: left;
+  font-weight: lighter;
+  font-size: smaller;
+}
+
+.charColor {
+  width: 100%;
+}
+
+.rare {
+  border: 6px #ffd700 solid;
+}
+
+.uncommon {
+  border: 6px #1ea1ff solid;
+}
+
+.common {
+  border: 6px lightgray solid;
+}
+
+.upgradedTitle {
+  color: rgb(0, 255, 0);
+}
+
+.quantity {
+  float: right;
+}
+
+.redcard {
+  background-color: #9f1818;
+}
+
+.greencard {
+  background-color: #01522f;
+}
+
+.bluecard {
+  background-color: #3a36aa;
+}
+
+.purplecard {
+  background-color: #680068;
+}
+
+.description {
+  display: none;
+}
+
+.deckCard {
+  height: 75px;
+}
+
+.deckCard:hover {
+  cursor: pointer;
+  height: fit-content;
+}
+
+.deckCard:hover .description {
+  display: block;
+  z-index: 999;
+}
+
+.cardDesc {
+  text-decoration: none;
+  color: lightgray;
+  position: relative;
+  float: right;
+}
+
+.cardDesc:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,33 +1,18 @@
-import { useState, useEffect } from "react";
+////////////////////////////////////////////////////////////////
+// Displays master list of all runs
+////////////////////////////////////////////////////////////////
 
-// import "./RunDisplay.css";
+import { useState } from "react";
 
 import RunCard from "./RunCard/RunCard";
 import RunDetails from "./RunDetails/RunDetails";
+// import ViewBox from "./RunDetails/ViewBox/ViewBox";
 
 const RunDisplay = (props) => {
   const [thisRun, setThisRun] = useState(false);
   const [date, setDate] = useState(false);
-  const [masterDeck, setMasterDeck] = useState(false);
-  const [relics, setRelics] = useState(false);
-
-  const arrayConverter = (arr) => {
-    return (
-      arr
-        // .substr(1, arr.length - 2)
-        .split(", ")
-        .map((card) => card)
-    );
-  };
-
-  if (thisRun !== false) {
-    setMasterDeck(arrayConverter(thisRun.master_deck));
-    setRelics(arrayConverter(thisRun.relics));
-  }
-  // console.log(thisRun);
-
   return (
-    <div className="container">
+    <div className="container runDisplayBox">
       <div className={`row ${thisRun ? "" : "detailsbg"}`}>
         <div className="col-md-2"></div>
         <div className={`col-md-9 ${thisRun ? "" : "scrollDiv"}`}>
@@ -37,10 +22,7 @@ const RunDisplay = (props) => {
               thisRun={thisRun}
               setThisRun={setThisRun}
               cardData={props.cardData}
-              masterDeck={masterDeck}
-              setMasterDeck={setMasterDeck}
-              relics={relics}
-              setRelics={setRelics}
+              relicData={props.relicData}
             />
           ) : (
             props.runData
@@ -51,10 +33,6 @@ const RunDisplay = (props) => {
                   setDate={setDate}
                   runData={run}
                   setThisRun={setThisRun}
-                  masterDeck={masterDeck}
-                  setMasterDeck={setMasterDeck}
-                  relics={relics}
-                  setRelics={setRelics}
                 />
               ))
           )}

@@ -1,12 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Shows each individual run on the RunDisplay component
+////////////////////////////////////////////////////////////////////////////
+
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Sparkle from "react-sparkle";
-
-// import "./RunCard.css";
+import { arrayConverter } from "../../../utils";
 
 const RunCard = (props) => {
   const [thisDate, setThisDate] = useState("");
+  const masterDeck = arrayConverter(props.data.master_deck);
 
+  // formats the date
   useEffect(() => {
     var rawDate = String(props.data.local_time);
     setThisDate(
@@ -23,7 +28,7 @@ const RunCard = (props) => {
     // props.setDate(thisDate);
     console.log(props.runData);
   };
-  // console.log(props.data.character.toLowerCase());
+
   return (
     <>
       <div className="container" style={{ position: "relative" }}>

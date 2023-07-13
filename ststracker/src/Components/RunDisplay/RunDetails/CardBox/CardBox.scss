@@ -1,0 +1,101 @@
+.cardType {
+  position: relative;
+  float: left;
+  font-weight: lighter;
+  font-size: smaller;
+  // padding: 10px;
+}
+
+.charColor {
+  width: 100%;
+}
+// .deckCard {
+//   // height: 50px;
+//   background-color: black;
+// }
+// .custTooltip {
+//   color: black;
+// }
+.rare {
+  border: 6px $gold solid;
+}
+.uncommon {
+  border: 6px #1ea1ff solid;
+}
+.common {
+  border: 6px lightgray solid;
+}
+.upgradedTitle {
+  color: rgb(0, 255, 0);
+}
+.quantity {
+  float: right;
+}
+
+.redcard {
+  background-color: $ironclad;
+}
+
+.greencard {
+  background-color: $silent;
+}
+
+.bluecard {
+  background-color: $defect;
+}
+
+.purplecard {
+  background-color: $watcher;
+}
+
+.description {
+  display: none;
+}
+.deckCard {
+  height: 75px;
+}
+.deckCard:hover {
+  cursor: pointer;
+  height: fit-content;
+}
+.deckCard:hover .description {
+  display: block;
+  z-index: 999;
+}
+// .defectPic {
+//   background-image: url("../../../../images/characters/defect-face.png");
+// }
+
+// .custTooltip {
+//   position: relative;
+//   display: inline-block;
+//   cursor: pointer;
+// }
+// .tooltip-text {
+//   background-color: white;
+//   color: black;
+//   border: 1px solid black;
+//   height: fit-content;
+//   // z-index: 999;
+// }
+
+// .custTooltip .tooltip-text {
+//   visibility: hidden;
+//   opacity: 0;
+//   position: absolute;
+//   bottom: 100%;
+//   left: 50%;
+//   transform: translateX(-50%);
+
+//   padding: 5px;
+//   border-radius: 4px;
+//   font-size: 12px;
+//   white-space: nowrap;
+//   transition: visibility 0.3s ease, opacity 0.3s ease;
+// }
+
+// .custTooltip:hover .tooltip-text {
+//   visibility: visible;
+//   opacity: 1;
+//   z-index: 999;
+// }
