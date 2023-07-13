@@ -11,6 +11,7 @@ import RunDetails from "./RunDetails/RunDetails";
 const RunDisplay = (props) => {
   const [thisRun, setThisRun] = useState(false);
   const [date, setDate] = useState(false);
+
   return (
     <div className="container runDisplayBox">
       <div className={`row ${thisRun ? "" : "detailsbg"}`}>
@@ -31,7 +32,7 @@ const RunDisplay = (props) => {
                 <RunCard
                   date={date}
                   setDate={setDate}
-                  runData={run}
+                  data={run}
                   setThisRun={setThisRun}
                 />
               ))
