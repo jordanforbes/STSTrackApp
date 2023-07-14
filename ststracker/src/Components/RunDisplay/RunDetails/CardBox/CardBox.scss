@@ -57,10 +57,19 @@
 .deckCard:hover {
   cursor: pointer;
   height: fit-content;
+  // padding: 10px;
 }
 .deckCard:hover .description {
   display: block;
   z-index: 999;
+  border-top: 1px solid white;
+}
+.costDesc {
+}
+.costText {
+  // border-bottom: 1px solid white;
+  margin-bottom: 10px;
+  font-weight: lighter;
 }
 // .defectPic {
 //   background-image: url("../../../../images/characters/defect-face.png");

@@ -13,6 +13,10 @@ const CardBox = (props) => {
   const cardInfo = findCardData(cardId, props.cardData);
   let upgrade = "";
 
+  var exhaust = false;
+  var ethereal = false;
+  var unplayable = false;
+
   const findUpgrade = (str) => {
     return str.match(/\((.*?)\)/g);
   };
@@ -66,7 +70,14 @@ const CardBox = (props) => {
         </Tooltip>
       </a> */}
           {/* <div class="custTooltip"> */}
-          <span class="description">{cardInfo.description}</span>
+          <div className="description">
+            {cardInfo.cost ? (
+              <div className="costText"> Cost: {cardInfo.cost}</div>
+            ) : (
+              ""
+            )}
+            <div className="descText">{cardInfo.description}</div>
+          </div>
         </div>
       </div>
     </>

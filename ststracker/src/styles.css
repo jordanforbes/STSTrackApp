@@ -153,11 +153,12 @@ div {
 }
 
 .ironcladPic {
-  height: 275px;
+  height: 250px;
+  margin-left: -10px;
 }
 
 .viewPic {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .scrollDivLight {
@@ -213,6 +214,7 @@ div {
   color: rgb(0, 0, 0);
   font-weight: bold;
   width: 200px;
+  height: fit-content;
   float: left;
 }
 
@@ -279,6 +281,12 @@ div {
 .deckCard:hover .description {
   display: block;
   z-index: 999;
+  border-top: 1px solid white;
+}
+
+.costText {
+  margin-bottom: 10px;
+  font-weight: lighter;
 }
 
 .cardDesc {
