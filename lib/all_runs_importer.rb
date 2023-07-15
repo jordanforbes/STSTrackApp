@@ -48,6 +48,7 @@ json_files.each do |file_path|
     seed: record["seed_played"],
     heart_kill: heart_kill,
     local_time: BigDecimal(record["local_time"]),
+    play_id: record["play_id"],
     run_id: record["run_id"]
   }
 

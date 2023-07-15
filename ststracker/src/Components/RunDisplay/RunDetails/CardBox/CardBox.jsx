@@ -33,15 +33,15 @@ const CardBox = (props) => {
     return `https://slay-the-spire.fandom.com/wiki/${cardName}`;
   };
 
-  const findUpgrade = (str) => {
-    return str.match(/\((.*?)\)/g);
-  };
+  // const findUpgrade = (str) => {
+  //   return str.match(/\((.*?)\)/g);
+  // };
 
-  console.log("Name: " + cardInfo.name);
-  console.log("og cost: " + cardInfo.cost);
-  console.log("check Cost: " + findUpgrade(cardInfo.cost));
-  console.log("char color: " + cardInfo.color);
-  console.log("check description: " + findUpgrade(cardInfo.description));
+  // console.log("Name: " + cardInfo.name);
+  // console.log("og cost: " + cardInfo.cost);
+  // console.log("check Cost: " + findUpgrade(cardInfo.cost));
+  // console.log("char color: " + cardInfo.color);
+  // console.log("check description: " + findUpgrade(cardInfo.description));
 
   console.log(cardInfo);
   if (cardId[cardId.length - 2] === "+") {

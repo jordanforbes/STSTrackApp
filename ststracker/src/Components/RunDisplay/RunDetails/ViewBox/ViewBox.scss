@@ -8,3 +8,40 @@
 .viewPic {
   margin-top: 50px;
 }
+
+.line1 {
+  // border-bottom: 1px solid lightgray;
+  background-color: rgb(238, 238, 238);
+}
+.viewBox {
+  // width: 700px;
+  border: 1px solid black;
+}
+.viewContainer {
+  height: 300px;
+  overflow: scroll;
+}
+
+.damage {
+  font-weight: bold;
+  color: red;
+}
+.enemyCard {
+  text-align: left;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 2px;
+  padding-left: 5px;
+}
+
+.basicRank {
+  // font-weight: bold;
+}
+.eliteRank {
+  font-weight: bold;
+  // color: rgb(255, 0, 0);
+}
+.bossRank {
+  font-weight: bold;
+  color: red;
+}

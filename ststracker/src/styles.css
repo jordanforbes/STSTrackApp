@@ -161,6 +161,41 @@ div {
   margin-top: 50px;
 }
 
+.line1 {
+  background-color: rgb(238, 238, 238);
+}
+
+.viewBox {
+  border: 1px solid black;
+}
+
+.viewContainer {
+  height: 300px;
+  overflow: scroll;
+}
+
+.damage {
+  font-weight: bold;
+  color: red;
+}
+
+.enemyCard {
+  text-align: left;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 2px;
+  padding-left: 5px;
+}
+
+.eliteRank {
+  font-weight: bold;
+}
+
+.bossRank {
+  font-weight: bold;
+  color: red;
+}
+
 .scrollDivLight {
   height: 500px;
   overflow: auto;
@@ -312,7 +347,7 @@ div {
 
 .deckRelic:hover {
   cursor: pointer;
-  background-color: rgb(204, 204, 204);
+  background-color: rgb(220, 221, 209);
 }
 
 .cardDesc {

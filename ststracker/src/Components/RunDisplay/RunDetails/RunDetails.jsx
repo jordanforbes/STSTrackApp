@@ -73,11 +73,12 @@ const RunDetails = (props) => {
             <div className="col-md-4">Seed: {props.thisRun.seed}</div>
           </div>
           <div className="row">
-            <div className="col-md-3"></div>
-            <div className="col-md-4">
-              <ViewBox character={props.thisRun.character} />
+            <div className="col-md-6">
+              <ViewBox
+                character={props.thisRun.character}
+                damageTaken={props.thisRun.damage_taken}
+              />
             </div>
-            <div className="col-md-1"></div>
             <div className="col-md-3 ">
               {/* <div className="relicBox"> */}
               <div className="row ">Number of Relics: {relicCount}</div>

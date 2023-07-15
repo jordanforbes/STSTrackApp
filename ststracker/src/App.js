@@ -42,7 +42,9 @@ function App() {
         console.error(error);
       });
   };
-  console.log(runData);
+
+  console.log("example run data");
+  console.log(runData[0]);
 
   return (
     <div className="App">
