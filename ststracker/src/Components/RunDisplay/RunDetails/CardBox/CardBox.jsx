@@ -17,6 +17,22 @@ const CardBox = (props) => {
   var ethereal = false;
   var unplayable = false;
 
+  const character =
+    cardInfo.color === "Red"
+      ? "Ironclad"
+      : cardInfo.color === "Green"
+      ? "Silent"
+      : cardInfo.color === "Blue"
+      ? "Defect"
+      : cardInfo.color === "Purple"
+      ? "Watcher"
+      : "Colorless";
+
+  const url = (card) => {
+    const cardName = card.replace(/ /g, "_");
+    return `https://slay-the-spire.fandom.com/wiki/${cardName}`;
+  };
+
   const findUpgrade = (str) => {
     return str.match(/\((.*?)\)/g);
   };
@@ -47,38 +63,45 @@ const CardBox = (props) => {
             : "common"
         }
 
-         ${cardInfo.color.toLowerCase()}card
+          ${cardInfo.color.toLowerCase()}card
 
-        `}
+          `}
       >
-        <span className={`cardName ${upgrade !== "" ? "upgradedTitle" : ""}`}>
-          {cardInfo.name}
-          {upgrade}
-        </span>
-        <span className={`quantity`}>x{count} </span>
-        {/* <CardToolTip cardInfo={cardInfo} /> */}
-        <div className={`charColor `}>
-          <div className={`cardType `}>{cardInfo.type}</div>
-          <br />
-          {/* cost: {cardInfo.cost}
+        <a
+          href={url(cardInfo.name)}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <span className={`cardName ${upgrade !== "" ? "upgradedTitle" : ""}`}>
+            {cardInfo.name}
+            {upgrade}
+          </span>
+          <span className={`quantity`}>x{count} </span>
+          {/* <CardToolTip cardInfo={cardInfo} /> */}
+          <div className={`charColor `}>
+            <div className={`cardType `}>{cardInfo.type}</div>
+            <br />
+            {/* cost: {cardInfo.cost}
         <br />
         <br />
-        {cardInfo.description} */}
-          {/* </div> */}
-          {/* <Tooltip anchorSelect={`.${cardInfo.description}`} place="top">
+      {cardInfo.description} */}
+            {/* </div> */}
+            {/* <Tooltip anchorSelect={`.${cardInfo.description}`} place="top">
           {cardInfo.description}
-        </Tooltip>
-      </a> */}
-          {/* <div class="custTooltip"> */}
-          <div className="description">
-            {cardInfo.cost ? (
-              <div className="costText"> Cost: {cardInfo.cost}</div>
-            ) : (
-              ""
-            )}
-            <div className="descText">{cardInfo.description}</div>
+          </Tooltip>
+        </a> */}
+            {/* <div class="custTooltip"> */}
+            <div className="description">
+              {cardInfo.cost ? (
+                <div className="costText"> Cost: {cardInfo.cost}</div>
+              ) : (
+                ""
+              )}
+              <div className="descText">{cardInfo.description}</div>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </>
   );
