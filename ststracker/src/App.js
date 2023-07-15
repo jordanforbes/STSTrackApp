@@ -36,11 +36,13 @@ function App() {
       .get("http://localhost:3000/api/v1/sts_runs")
       .then((res) => {
         setRunData(res.data);
+        console.log(res.data);
       })
       .catch((error) => {
         console.error(error);
       });
   };
+  console.log(runData);
 
   return (
     <div className="App">

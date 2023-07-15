@@ -32,7 +32,7 @@ const RunCard = (props) => {
   return (
     <>
       <div className="container" style={{ position: "relative" }}>
-        {props.runData.victory ? (
+        {props.data.victory ? (
           <Sparkle
             color="#ffd700"
             className="victorySparkle"
