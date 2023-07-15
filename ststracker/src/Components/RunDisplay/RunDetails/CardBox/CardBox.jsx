@@ -73,32 +73,36 @@ const CardBox = (props) => {
           rel="noopener noreferrer"
           style={{ textDecoration: "none", color: "white" }}
         >
-          <span className={`cardName ${upgrade !== "" ? "upgradedTitle" : ""}`}>
-            {cardInfo.name}
-            {upgrade}
-          </span>
-          <span className={`quantity`}>x{count} </span>
-          {/* <CardToolTip cardInfo={cardInfo} /> */}
-          <div className={`charColor `}>
-            <div className={`cardType `}>{cardInfo.type}</div>
-            <br />
-            {/* cost: {cardInfo.cost}
+          <div>
+            <span
+              className={`cardName ${upgrade !== "" ? "upgradedTitle" : ""}`}
+            >
+              {cardInfo.name}
+              {upgrade}
+            </span>
+            <span className={`quantity`}>x{count} </span>
+            {/* <CardToolTip cardInfo={cardInfo} /> */}
+            <div className={`charColor `}>
+              <div className={`cardType `}>{cardInfo.type}</div>
+              <br />
+              {/* cost: {cardInfo.cost}
         <br />
         <br />
       {cardInfo.description} */}
-            {/* </div> */}
-            {/* <Tooltip anchorSelect={`.${cardInfo.description}`} place="top">
+              {/* </div> */}
+              {/* <Tooltip anchorSelect={`.${cardInfo.description}`} place="top">
           {cardInfo.description}
           </Tooltip>
         </a> */}
-            {/* <div class="custTooltip"> */}
-            <div className="description">
-              {cardInfo.cost ? (
-                <div className="costText"> Cost: {cardInfo.cost}</div>
-              ) : (
-                ""
-              )}
-              <div className="descText">{cardInfo.description}</div>
+              {/* <div class="custTooltip"> */}
+              <div className="description">
+                {cardInfo.cost ? (
+                  <div className="costText"> Cost: {cardInfo.cost}</div>
+                ) : (
+                  ""
+                )}
+                <div className="descText">{cardInfo.description}</div>
+              </div>
             </div>
           </div>
         </a>

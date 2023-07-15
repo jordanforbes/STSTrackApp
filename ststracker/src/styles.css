@@ -253,6 +253,10 @@ div {
   background-color: #9f1818;
 }
 
+.redcard:hover {
+  background-color: #c13131;
+}
+
 .greencard {
   background-color: #01522f;
 }
@@ -265,6 +269,26 @@ div {
   background-color: #680068;
 }
 
+.greencard:hover {
+  background-color: #0d7749;
+}
+
+.bluecard:hover {
+  background-color: #504bd4;
+}
+
+.purplecard:hover {
+  background-color: #8d0f8d;
+}
+
+.colorlesscard {
+  background-color: black;
+}
+
+.colorlesscard:hover {
+  background-color: rgb(58, 58, 58);
+}
+
 .description {
   display: none;
 }
@@ -275,18 +299,20 @@ div {
 
 .deckCard:hover {
   cursor: pointer;
-  height: fit-content;
-}
-
-.deckCard:hover .description {
-  display: block;
-  z-index: 999;
-  border-top: 1px solid white;
 }
 
 .costText {
   margin-bottom: 10px;
   font-weight: lighter;
+}
+
+.deckRelic {
+  background-color: white;
+}
+
+.deckRelic:hover {
+  cursor: pointer;
+  background-color: rgb(204, 204, 204);
 }
 
 .cardDesc {

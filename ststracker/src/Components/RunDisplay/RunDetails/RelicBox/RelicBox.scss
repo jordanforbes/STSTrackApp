@@ -1,0 +1,8 @@
+.deckRelic {
+  background-color: $relic;
+}
+
+.deckRelic:hover {
+  cursor: pointer;
+  background-color: $relicHover;
+}
