@@ -1,0 +1,172 @@
+{
+  "gold_per_floor": [113, 31, 31, 46, 20, 20, 36, 54, 54, 54, 69, 69, 98, 98],
+  "floor_reached": 14,
+  "playtime": 535,
+  "items_purged": [],
+  "score": 90,
+  "play_id": "bbe879bf-a40b-4fe5-80f2-dd15532312c2",
+  "local_time": "20221127010024",
+  "is_ascension_mode": false,
+  "campfire_choices": [
+    { "data": "Panacea", "floor": 6, "key": "SMITH" },
+    { "data": "Feed", "floor": 12, "key": "SMITH" }
+  ],
+  "neow_cost": "NONE",
+  "seed_source_timestamp": 978329676532600,
+  "circlet_count": 0,
+  "master_deck": [
+    "Strike_R",
+    "Strike_R+1",
+    "Strike_R",
+    "Strike_R",
+    "Strike_R+1",
+    "Defend_R",
+    "Defend_R",
+    "Defend_R",
+    "Defend_R",
+    "Bash",
+    "Panacea+1",
+    "Iron Wave",
+    "Impatience",
+    "Carnage",
+    "Warcry",
+    "Iron Wave",
+    "Warcry",
+    "Fire Breathing",
+    "Feed+1",
+    "Carnage",
+    "Pummel"
+  ],
+  "relics": ["Burning Blood", "Pantograph", "CaptainsWheel"],
+  "potions_floor_usage": [13],
+  "damage_taken": [
+    { "damage": 12, "enemies": "Jaw Worm", "floor": 1, "turns": 6 },
+    { "damage": 2, "enemies": "2 Louse", "floor": 4, "turns": 2 },
+    { "damage": 6, "enemies": "Cultist", "floor": 7, "turns": 3 },
+    { "damage": 24, "enemies": "Large Slime", "floor": 8, "turns": 6 },
+    { "damage": 4, "enemies": "Blue Slaver", "floor": 11, "turns": 3 },
+    { "damage": 45, "enemies": "Lagavulin", "floor": 13, "turns": 9 },
+    { "damage": 11, "enemies": "Lots of Slimes", "floor": 14, "turns": 1 }
+  ],
+  "seed_played": "2689680009454019558",
+  "potions_obtained": [
+    { "floor": 4, "key": "Ancient Potion" },
+    { "floor": 7, "key": "Ancient Potion" },
+    { "floor": 11, "key": "BlessingOfTheForge" }
+  ],
+  "is_trial": false,
+  "path_per_floor": [
+    "M",
+    "$",
+    "?",
+    "M",
+    "$",
+    "R",
+    "M",
+    "M",
+    "T",
+    "?",
+    "M",
+    "R",
+    "E",
+    "M"
+  ],
+  "character_chosen": "IRONCLAD",
+  "items_purchased": ["Impatience", "Warcry"],
+  "campfire_rested": 0,
+  "item_purchase_floors": [2, 5],
+  "current_hp_per_floor": [
+    74, 74, 58, 62, 62, 62, 62, 44, 44, 44, 49, 49, 10, 0
+  ],
+  "gold": 98,
+  "neow_bonus": "RANDOM_COLORLESS",
+  "is_prod": false,
+  "is_daily": false,
+  "chose_seed": false,
+  "campfire_upgraded": 2,
+  "win_rate": 0,
+  "timestamp": 1669528824,
+  "path_taken": [
+    "M",
+    "$",
+    "?",
+    "M",
+    "$",
+    "R",
+    "M",
+    "M",
+    "T",
+    "?",
+    "M",
+    "R",
+    "E",
+    "M"
+  ],
+  "build_version": "2022-10-04",
+  "purchased_purges": 0,
+  "victory": false,
+  "max_hp_per_floor": [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 83, 83, 83, 83],
+  "card_choices": [
+    {
+      "not_picked": ["Dark Shackles", "Impatience"],
+      "picked": "Panacea",
+      "floor": 0
+    },
+    {
+      "not_picked": ["Headbutt", "Clothesline"],
+      "picked": "Iron Wave",
+      "floor": 1
+    },
+    {
+      "not_picked": ["Combust", "Thunderclap"],
+      "picked": "Carnage",
+      "floor": 4
+    },
+    {
+      "not_picked": ["Bloodletting", "Dark Embrace"],
+      "picked": "Iron Wave",
+      "floor": 7
+    },
+    { "not_picked": ["True Grit", "Berserk"], "picked": "Warcry", "floor": 8 },
+    { "not_picked": ["Shockwave", "Havoc"], "picked": "Carnage", "floor": 11 },
+    { "not_picked": ["Seeing Red", "Flex"], "picked": "Pummel", "floor": 13 }
+  ],
+  "player_experience": 1233345,
+  "relics_obtained": [
+    { "floor": 9, "key": "Pantograph" },
+    { "floor": 13, "key": "CaptainsWheel" }
+  ],
+  "event_choices": [
+    {
+      "damage_healed": 0,
+      "gold_gain": 0,
+      "player_choice": "Entered Light",
+      "damage_taken": 16,
+      "max_hp_gain": 0,
+      "max_hp_loss": 0,
+      "event_name": "Shining Light",
+      "floor": 3,
+      "gold_loss": 0,
+      "cards_upgraded": ["Strike_R", "Strike_R"]
+    },
+    {
+      "damage_healed": 0,
+      "gold_gain": 0,
+      "player_choice": "2 cards matched",
+      "damage_taken": 0,
+      "max_hp_gain": 0,
+      "max_hp_loss": 0,
+      "event_name": "Match and Keep!",
+      "floor": 10,
+      "gold_loss": 0,
+      "cards_obtained": ["Fire Breathing", "Feed"]
+    }
+  ],
+  "is_beta": false,
+  "boss_relics": [],
+  "items_purged_floors": [],
+  "is_endless": false,
+  "potions_floor_spawned": [4, 7, 11],
+  "killed_by": "Lots of Slimes",
+  "ascension_level": 0
+}

@@ -1,0 +1,161 @@
+{
+  "neow_bonuses_skipped_log": ["THREE_CARDS", "TWO_FIFTY_GOLD", "BOSS_RELIC"],
+  "neow_costs_skipped_log": ["NONE", "CURSE", "NONE"],
+  "potions_obtained_entropic_brew": [[], [], [], [], [], []],
+  "gold_per_floor": [116, 131, 131, 145, 17, 50],
+  "floor_reached": 6,
+  "playtime": 933,
+  "items_purged": ["Strike_B"],
+  "score": 69,
+  "play_id": "f1c31541-311f-4d09-9529-d6388536ffa4",
+  "local_time": "20230615103429",
+  "score_breakdown": [
+    "Floors Climbed (6): 30",
+    "Enemies Slain (3): 6",
+    "Exordium Elites Killed (1): 10",
+    "Bosses Slain (0): 0",
+    "Ascension (10): 23"
+  ],
+  "is_ascension_mode": true,
+  "potions_obtained_alchemize": [[], [], [], [], [], []],
+  "campfire_choices": [],
+  "lesson_learned_per_floor": [[], [], [], [], [], []],
+  "neow_cost": "NONE",
+  "improvable_cards": {},
+  "seed_source_timestamp": 1536567853035700,
+  "shop_contents": [
+    {
+      "floor": 5,
+      "relics": ["Mango", "Singing Bowl", "Toolbox"],
+      "cards": [
+        "Lockon",
+        "Blizzard",
+        "Force Field",
+        "Static Discharge",
+        "Forethought",
+        "Apotheosis"
+      ],
+      "potions": ["Fruit Juice", "Energy Potion", "DuplicationPotion"]
+    }
+  ],
+  "circlet_count": 0,
+  "master_deck": [
+    "AscendersBane",
+    "Strike_B",
+    "Strike_B",
+    "Defend_B",
+    "Defend_B",
+    "Defend_B",
+    "Defend_B",
+    "Zap",
+    "Dualcast",
+    "Coolheaded",
+    "Ball Lightning",
+    "Tempest",
+    "Leap",
+    "Conserve Battery"
+  ],
+  "potion_use_per_floor": [[], [], [], [], [], ["DuplicationPotion"]],
+  "relics": ["Cracked Core", "Art of War", "Nunchaku"],
+  "potions_floor_usage": [6],
+  "damage_taken": [
+    { "damage": 1, "enemies": "Small Slimes", "floor": 1, "turns": 3 },
+    { "damage": 2, "enemies": "2 Louse", "floor": 2, "turns": 2 },
+    { "damage": 12, "enemies": "Jaw Worm", "floor": 4, "turns": 3 },
+    { "damage": 4, "enemies": "3 Sentries", "floor": 6, "turns": 8 }
+  ],
+  "seed_played": "-500376139418613355",
+  "neow_bonus_log": {
+    "cardsObtained": [],
+    "cardsUpgraded": [],
+    "cardsRemoved": [],
+    "cardsTransformed": [],
+    "relicsObtained": ["Art of War"],
+    "maxHpGained": 0,
+    "goldGained": 0,
+    "damageTaken": 0,
+    "goldLost": 0,
+    "maxHpLost": 0
+  },
+  "potions_obtained": [{ "floor": 1, "key": "DuplicationPotion" }],
+  "is_trial": false,
+  "path_per_floor": ["M", "M", "?", "M", "$", "E"],
+  "character_chosen": "DEFECT",
+  "basemod:card_modifiers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "items_purchased": ["Conserve Battery"],
+  "campfire_rested": 0,
+  "item_purchase_floors": [5],
+  "current_hp_per_floor": [67, 65, 65, 53, 53, 49],
+  "gold": 50,
+  "neow_bonus": "RANDOM_COMMON_RELIC",
+  "is_prod": false,
+  "is_daily": false,
+  "rewards_skipped": [],
+  "chose_seed": false,
+  "campfire_upgraded": 0,
+  "win_rate": 0,
+  "floor_exit_playtime": [73, 113, 124, 167, 184],
+  "timestamp": 1686839669,
+  "path_taken": ["M", "M", "?", "M", "$", "E"],
+  "build_version": "2022-12-18",
+  "purchased_purges": 1,
+  "victory": false,
+  "max_hp_per_floor": [75, 75, 75, 75, 75, 75],
+  "card_choices": [
+    {
+      "not_picked": ["Darkness", "Hologram"],
+      "picked": "Coolheaded",
+      "floor": 1
+    },
+    {
+      "not_picked": ["Stack", "Scrape"],
+      "picked": "Ball Lightning",
+      "floor": 2
+    },
+    {
+      "not_picked": ["Doom and Gloom", "Conserve Battery"],
+      "picked": "Leap",
+      "floor": 4
+    }
+  ],
+  "player_experience": 1467262,
+  "relics_obtained": [{ "floor": 6, "key": "Nunchaku" }],
+  "event_choices": [
+    {
+      "damage_healed": 0,
+      "gold_gain": 0,
+      "cards_transformed": ["Strike_B"],
+      "player_choice": "Change",
+      "damage_taken": 0,
+      "max_hp_gain": 0,
+      "max_hp_loss": 0,
+      "event_name": "Living Wall",
+      "floor": 3,
+      "gold_loss": 0,
+      "cards_obtained": ["Tempest"]
+    }
+  ],
+  "is_beta": false,
+  "boss_relics": [],
+  "items_purged_floors": [5],
+  "is_endless": false,
+  "potions_floor_spawned": [1],
+  "killed_by": "3 Sentries",
+  "ascension_level": 10,
+  "potion_discard_per_floor": [[], [], [], [], [], []]
+}
