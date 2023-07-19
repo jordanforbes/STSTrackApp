@@ -18,6 +18,7 @@ require_relative '../config/environment'
 folder_path = Rails.root.join('db/runs')
 
 puts "all runs importer"
+
 # for each folder in folder
 Dir.foreach(folder_path) do |entry|
   # puts entry
@@ -72,8 +73,15 @@ Dir.foreach(folder_path) do |entry|
       run_id: record["run_id"]
     }
 
+    # Check if a record with the same play_id or run_id exists in the database
+        # Check if a record with the same play_id or run_id exists in the database
+    if StsRun.exists?(play_id: mapped_records[:play_id])
+      # puts "Skipping duplicate record with play_id: #{mapped_records[:play_id]} or run_id: #{mapped_records[:run_id]}"
+    else
       # Create the record if it's not a duplicate
-      StsRun.create(mapped_records)
 
+      StsRun.create(mapped_records)
+      puts "uploading unique record with play_id: #{mapped_records[:play_id]}"
+    end
   end
 end
