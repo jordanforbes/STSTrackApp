@@ -276,6 +276,14 @@ div {
   border: 6px lightgray solid;
 }
 
+.curse {
+  border: 6px #9f1818 solid;
+}
+
+.curse:hover {
+  background-color: rgb(58, 58, 58);
+}
+
 .upgradedTitle {
   color: rgb(0, 255, 0);
 }

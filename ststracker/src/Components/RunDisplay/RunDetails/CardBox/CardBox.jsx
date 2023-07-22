@@ -60,6 +60,8 @@ const CardBox = (props) => {
             ? "rare"
             : cardInfo.rarity === "Uncommon"
             ? "uncommon"
+            : cardInfo.type === "Curse"
+            ? "curse"
             : "common"
         }
 

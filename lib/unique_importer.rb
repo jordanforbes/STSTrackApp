@@ -17,7 +17,7 @@ require_relative '../config/environment'
 
 folder_path = Rails.root.join('db/runs')
 
-puts "all runs importer"
+puts "unique runs importer"
 
 # for each folder in folder
 Dir.foreach(folder_path) do |entry|

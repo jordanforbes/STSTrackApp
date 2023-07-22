@@ -9,13 +9,6 @@
 .charColor {
   width: 100%;
 }
-// .deckCard {
-//   // height: 50px;
-//   background-color: black;
-// }
-// .custTooltip {
-//   color: black;
-// }
 .rare {
   border: 6px $gold solid;
 }
@@ -24,6 +17,12 @@
 }
 .common {
   border: 6px lightgray solid;
+}
+.curse {
+  border: 6px $ironclad solid;
+}
+.curse:hover {
+  background-color: $colorlessHover;
 }
 .upgradedTitle {
   color: rgb(0, 255, 0);
@@ -77,18 +76,9 @@
 }
 .deckCard:hover {
   cursor: pointer;
-  // height: fit-content;
-  // padding: 10px;
 }
-// .deckCard:hover .description {
-//   display: block;
-//   z-index: 999;
-//   border-top: 1px solid white;
-// }
-.costDesc {
-}
+
 .costText {
-  // border-bottom: 1px solid white;
   margin-bottom: 10px;
   font-weight: lighter;
 }

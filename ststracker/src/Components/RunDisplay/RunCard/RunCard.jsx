@@ -73,9 +73,7 @@ const RunCard = (props) => {
               <div className="col-md-2">
                 <Button
                   onClick={handleClick}
-                  className={`detailsBtn ${
-                    props.data.victory ? "vicBtn" : "failBtn"
-                  } `}
+                  className={`detailsBtn `}
                   variant="light"
                 >
                   Details
