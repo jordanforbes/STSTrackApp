@@ -3,7 +3,7 @@ namespace :load_all_runs do
     puts "Running unique_importer.rb"
     system('rails runner lib/unique_importer.rb')
   end
-  task :refresh => :environment do
+  task :r => :environment do
     puts "Deleting all StsRun records..."
     StsRun.delete_all
 

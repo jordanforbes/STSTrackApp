@@ -54,3 +54,8 @@ export const findCardData = (card, data) => {
 export const findRelicData = (relic_id, data) => {
   return data.find((relicObj) => relicObj.id === relic_id);
 };
+
+export const stsUrl = (card) => {
+  const cardName = card.replace(/ /g, "_");
+  return `https://slay-the-spire.fandom.com/wiki/${cardName}`;
+};

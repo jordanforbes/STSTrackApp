@@ -209,6 +209,26 @@ div {
   border: 1px solid black;
 }
 
+.died {
+  background-color: red;
+  color: white;
+}
+
+.heartkill {
+  background-color: black;
+  color: white;
+}
+
+.victoryPlate {
+  background-color: black;
+}
+
+.ending {
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 .relicScroll {
   height: 300px;
   width: fit-content;
@@ -356,17 +376,6 @@ div {
 .deckRelic:hover {
   cursor: pointer;
   background-color: rgb(220, 221, 209);
-}
-
-.cardDesc {
-  text-decoration: none;
-  color: lightgray;
-  position: relative;
-  float: right;
-}
-
-.cardDesc:hover {
-  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,36 +1,34 @@
 import React from "react";
-// import charFolder from "../../../../images/characters/";
 import "./ViewBox.scss";
 
 const ViewBox = (props) => {
-  // console.log(`${props.character.toLowerCase()}Pic`);
-  const elites = [
-    "Gremlin Nob",
-    "Lagavulin",
-    "3 Sentries",
-    "Gremlin Leader",
-    "Slavers",
-    "Book of Stabbing",
-    "Giant Head",
-    "Nemesis",
-    "Reptomancer",
-    "Shield and Spear",
-  ];
-
-  const bosses = [
-    "Slime Boss",
-    "Hexaghost",
-    "The Guardian",
-    "Bronze Automaton",
-    "The Champ",
-    "The Collector",
-    "The Awakened One",
-    "Donu and Deca",
-    "Time Eater",
-    "The Heart",
-  ];
-
   const enemyRank = (enemy) => {
+    const elites = [
+      "Gremlin Nob",
+      "Lagavulin",
+      "3 Sentries",
+      "Gremlin Leader",
+      "Slavers",
+      "Book of Stabbing",
+      "Giant Head",
+      "Nemesis",
+      "Reptomancer",
+      "Shield and Spear",
+    ];
+
+    const bosses = [
+      "Slime Boss",
+      "Hexaghost",
+      "The Guardian",
+      "Bronze Automaton",
+      "The Champ",
+      "The Collector",
+      "The Awakened One",
+      "Donu and Deca",
+      "Time Eater",
+      "The Heart",
+    ];
+
     return elites.includes(enemy)
       ? "eliteRank"
       : bosses.includes(enemy)
@@ -38,7 +36,6 @@ const ViewBox = (props) => {
       : "basicRank";
   };
 
-  console.log(props.damageTaken);
   return (
     <div className={`viewContainer container`}>
       {props.damageTaken.map((damage) => (

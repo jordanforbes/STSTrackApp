@@ -13,6 +13,26 @@
   border: 1px solid black;
 }
 
+.died {
+  background-color: red;
+  color: white;
+}
+
+.heartkill {
+  background-color: black;
+  color: white;
+}
+.victoryPlate {
+  background-color: black;
+  // color: white;
+}
+
+.ending {
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 .relicScroll {
   height: 300px;
   width: fit-content;

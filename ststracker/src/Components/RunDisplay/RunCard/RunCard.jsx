@@ -45,7 +45,6 @@ const RunCard = (props) => {
           ""
         )}
         <div className="row">
-          {/* <div className="col-md-2"></div> */}
           <div className="col-md-1"></div>
           <div
             className={`col-md-10 runcard ${props.data.character.toLowerCase()} ${
@@ -69,7 +68,6 @@ const RunCard = (props) => {
                     props.data.killed_by}
               </div>
               <div className="col-md-2">Deck Size: {masterDeck.length}</div>
-              {/* <div className="col-md-2"></div> */}
               <div className="col-md-2">
                 <Button
                   onClick={handleClick}

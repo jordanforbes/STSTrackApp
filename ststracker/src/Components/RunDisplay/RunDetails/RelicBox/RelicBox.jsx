@@ -1,17 +1,16 @@
-import { findRelicData } from "../../../../utils";
+////////////////////////////////////////////////////////////////////
+// Relic Buttons which link you to the sts fandom site
+////////////////////////////////////////////////////////////////
+
+import { findRelicData, stsUrl } from "../../../../utils";
 
 const RelicBox = (props) => {
   const relicId = props.relicId;
   const relicInfo = findRelicData(relicId, props.relicData);
 
-  const url = (card) => {
-    const cardName = card.replace(/ /g, "_");
-    return `https://slay-the-spire.fandom.com/wiki/${cardName}`;
-  };
-
   return (
     <a
-      href={url(relicInfo.name)}
+      href={stsUrl(relicInfo.name)}
       target="_blank"
       rel="noopener noreferrer"
       style={{ textDecoration: "none", color: "black" }}

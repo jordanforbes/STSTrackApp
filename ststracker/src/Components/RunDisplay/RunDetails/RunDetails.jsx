@@ -7,6 +7,7 @@ import { arrayConverter } from "../../../utils";
 import CardBox from "./CardBox/CardBox";
 import RelicBox from "./RelicBox/RelicBox";
 import ViewBox from "./ViewBox/ViewBox";
+import NoteBox from "./NoteBox/NoteBox";
 
 const RunDetails = (props) => {
   const masterDeck = arrayConverter(props.thisRun.master_deck);
@@ -24,6 +25,15 @@ const RunDetails = (props) => {
   const clearBtn = () => {
     props.setThisRun(false);
   };
+
+  const endClass = () => {
+    return !props.thisRun.victory
+      ? "died"
+      : props.thisRun.heart_kill
+      ? "heartkill"
+      : "victory victoryPlate";
+  };
+  console.log(props.thisRun);
 
   // counts how many cards and adds them to deckMap obj
   masterDeck.forEach((card) => {
@@ -46,14 +56,16 @@ const RunDetails = (props) => {
             <div className="col-md-1"></div>
 
             <div className="col-md-6">
-              {!props.thisRun.victory
-                ? "Died on Floor " +
-                  props.thisRun.floor +
-                  " to " +
-                  props.thisRun.killed_by
-                : props.thisRun.heart_kill
-                ? "Defeated the Heart!"
-                : "Victory!"}
+              <div className={`ending ${endClass()}`}>
+                {!props.thisRun.victory
+                  ? "Died on Floor " +
+                    props.thisRun.floor +
+                    " to " +
+                    props.thisRun.killed_by
+                  : props.thisRun.heart_kill
+                  ? "Defeated the Heart!"
+                  : "Victory!"}
+              </div>
             </div>
             <div className="col-md-2">
               <Button
@@ -64,7 +76,6 @@ const RunDetails = (props) => {
                 Back
               </Button>
             </div>
-            {/* <div className="row"></div> */}
           </div>
           <div className="row cardCount">
             <div className="col-md-2">{props.date}</div>
@@ -74,23 +85,26 @@ const RunDetails = (props) => {
           </div>
           <div className="row">
             <div className="col-md-6">
+              Battles
               <ViewBox
                 character={props.thisRun.character}
                 damageTaken={props.thisRun.damage_taken}
               />
             </div>
+            <div className="col-md-1 "></div>
             <div className="col-md-3 ">
-              {/* <div className="relicBox"> */}
               <div className="row ">Number of Relics: {relicCount}</div>
               <div className="row relicScroll">
                 {relics.map((relic) => (
                   <RelicBox relicId={relic} relicData={props.relicData} />
                 ))}
-                {/* </div> */}
               </div>
             </div>
           </div>
           <div className="row"></div>
+          <div className="row">
+            <NoteBox notes={props.thisRun.notes} />
+          </div>
           <div className="row deckRow  ">
             <div className="col-md-12 ">
               <div className="row">Cards in Deck: {deckCount}</div>
