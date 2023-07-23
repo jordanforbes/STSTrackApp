@@ -12,6 +12,7 @@ module Api
   # GET /sts_runs/1 or /sts_runs/1.json
   def show
     @sts_run = StsRun.find(params[:id])
+    render json: @sts_run
   end
 
   # GET /sts_runs/new
