@@ -41,15 +41,24 @@ module Api
       end
 
       # PATCH/PUT /sts_runs/1 or /sts_runs/1.json
+      # def update
+      #   respond_to do |format|
+      #     if @sts_run.update(sts_run_params)
+      #       format.html { redirect_to sts_run_params(@sts_run), notice: "Sts run was successfully updated." }
+      #       format.json { render :show, status: :ok, location: @sts_run }
+      #     else
+      #       format.html { render :edit, status: :unprocessable_entity }
+      #       format.json { render json: @sts_run.errors, status: :unprocessable_entity }
+      #     end
+      #   end
+      # end
       def update
-        respond_to do |format|
-          if @sts_run.update(sts_run_params)
-            format.html { redirect_to sts_run_url(@sts_run), notice: "Sts run was successfully updated." }
-            format.json { render :show, status: :ok, location: @sts_run }
-          else
-            format.html { render :edit, status: :unprocessable_entity }
-            format.json { render json: @sts_run.errors, status: :unprocessable_entity }
-          end
+        @sts_run = StsRun.find(params[:id])
+
+        if @sts_run.update(sts_run_params)
+          render json: @sts_run, status: :ok
+        else
+          render json: @sts_run.errors, status: :unprocessable_entity
         end
       end
 
@@ -71,7 +80,7 @@ module Api
 
         # Only allow a list of trusted parameters through.
         def sts_run_params
-          params.require(:sts_run).permit(:character, :floor, :notes)
+          params.require(:sts_run).permit(:notes)
         end
     end
 
