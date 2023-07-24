@@ -103,7 +103,7 @@ const RunDetails = (props) => {
           </div>
           <div className="row"></div>
           <div className="row">
-            <NoteBox notes={props.thisRun.notes} />
+            <NoteBox notes={props.thisRun.notes} run_id={props.thisRun.id} />
           </div>
           <div className="row deckRow  ">
             <div className="col-md-12 ">

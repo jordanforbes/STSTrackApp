@@ -29,10 +29,16 @@ export const findCard = (card, data) => {
     card_id = card;
   }
 
-  let obj = data.find((cardObj) => cardObj.id === card_id);
-  cardData.name = obj.name;
-  cardData.id = obj.id;
-  cardData.cardInfo = obj;
+  if (data.find((cardObj) => cardObj.id === card_id)) {
+    let obj = data.find((cardObj) => cardObj.id === card_id);
+    cardData.name = obj.name;
+    cardData.id = obj.id;
+    cardData.cardInfo = obj;
+  } else {
+    cardData.name = card.name;
+    cardData.id = card.id;
+    cardData.cardInfo = card;
+  }
 
   return cardData;
 };
