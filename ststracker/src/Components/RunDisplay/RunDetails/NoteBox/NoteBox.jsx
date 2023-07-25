@@ -10,13 +10,11 @@ const NoteBox = (props) => {
   };
 
   axios.defaults.baseURL = "http://localhost:3000/";
-  const url = `api/v1/sts_runs/${props.run_id}`;
 
   const handleSubmit = (event) => {
-    // event.preventDefault();
-
+    event.preventDefault();
     axios
-      .patch(url, { sts_run: { notes: notes } })
+      .patch(`api/v1/sts_runs/${props.run_id}`, { sts_run: { notes: notes } })
       .then((res) => {
         console.log(res.data);
       })
@@ -24,17 +22,27 @@ const NoteBox = (props) => {
   };
   return (
     <>
-      <label htmlFor="textInput">Notes:</label>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="textInput"
-          name="sts_run[notes]"
-          defaultValue={props.notes}
-          onChange={handleInputChange}
-        />
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="container">
+        <div className="col-md-3"></div>
+        <label htmlFor="textInput">Notes:</label>
+        <form onSubmit={handleSubmit}>
+          <div className="col-md-6">
+            <textarea
+              className="form-control"
+              rows="3"
+              type="text"
+              id="textInput"
+              style={{ resize: "none" }}
+              name="sts_run[notes]"
+              defaultValue={props.notes}
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <input type="submit" value="Submit" />
+        </form>
+        <div className="col-md-3"></div>
+      </div>
     </>
   );
 };

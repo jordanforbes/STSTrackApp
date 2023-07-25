@@ -72,6 +72,15 @@ div {
   height: 5rem;
 }
 
+.noteRow {
+  padding-bottom: 5px;
+}
+
+.notesHr {
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
 .victory {
   /* border: 4px solid gold; */
   color: #ffd700;
@@ -194,6 +203,11 @@ div {
 .bossRank {
   font-weight: bold;
   color: red;
+}
+
+.noteTextBox {
+  height: 100px;
+  width: 500px;
 }
 
 .scrollDivLight {

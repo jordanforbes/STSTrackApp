@@ -70,7 +70,7 @@ Dir.foreach(folder_path) do |entry|
       local_time: BigDecimal(record["local_time"]),
       play_id: record["play_id"],
       run_id: record["run_id"],
-      notes: "Enter notes here"
+      notes: ""
     }
 
       # Create the record if it's not a duplicate

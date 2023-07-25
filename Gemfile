@@ -22,6 +22,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.9', '>= 4.9.2'
+gem 'devise-jwt'
 
 # A testing framework that allows you to write behavior-driven tests (BDD) for your Rails application.
 gem 'rspec', '~> 3.4'

@@ -51,7 +51,7 @@ const RunCard = (props) => {
               props.data.victory ? "victory" : "failure"
             }`}
           >
-            <div className="row">
+            <div className="row detailRow">
               <div className="col-md-3 ">
                 <p className="charLabel">{props.data.character}</p>
                 <p className="dateLabel">{thisDate}</p>
@@ -77,6 +77,11 @@ const RunCard = (props) => {
                   Details
                 </Button>
               </div>
+            </div>
+            <hr className="notesHr" />
+            <div className="row noteRow">
+              <div className="col-md-1"></div>
+              <div className="col-md-10">{props.data.notes}</div>
             </div>
           </div>
         </div>
