@@ -3,7 +3,6 @@
 
 require_relative '../app/models/user'
 
-
 User.find_each do |user|
   user.generate_authentication_token if user.authentication_token.blank?
 end

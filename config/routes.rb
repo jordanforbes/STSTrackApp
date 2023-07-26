@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: 'api/v1/registrations'
   }
 
+
    namespace :api do
     namespace :v1 do
       resources :sts_runs, only: [:index,:show, :update]
